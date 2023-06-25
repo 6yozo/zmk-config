@@ -12,16 +12,28 @@
 #include <dt-bindings/zmk/ext_power.h>
 
 / {
+    behaviors {
+      skq: sticky_key_quick_release {
+        compatible = "zmk,behavior-sticky-key";
+        label = "STICKY_KEY_QUICK_RELEASE";
+        #binding-cells = <1>;
+        bindings = <&kp>;
+        release-after-ms = <1000>;
+        quick-release;
+        ignore-modifiers;
+      };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
 // 0: COLEMAK-DH
             bindings = <
-    &kp Q       &kp W       &kp F        &kp P        &kp B           &kp J   &kp L        &kp U        &kp Y         &kp SQT
-    &mt LGUI A  &mt LALT R  &mt LCTRL S  &mt LSHFT T  &kp G           &kp M   &mt LSHFT N  &mt LCTRL E  &mt LALT I    &mt LGUI O
-    &kp Z       &mt RALT X  &kp C        &kp D        &kp V           &kp K   &kp H        &kp COMMA    &mt RALT DOT  &kp SLASH
-    &kp N1      &lt 6 ESC   &lt 1 SPACE  &lt 5 TAB    &kp N2          &kp N3  &lt 3 RET    &lt 2 BSPC   &lt 4 DEL     &kp N4
+    &kp Q   &kp W  &kp F        &kp P      &kp B           &kp J   &kp L      &kp U       &kp Y    &kp SQT
+    &kp A   &kp R  &kp S        &kp T      &kp G           &kp M   &kp N      &kp E       &kp I    &kp O
+    &kp Z   &kp X  &kp C        &kp D      &kp V           &kp K   &kp H      &kp COMMA   &kp DOT  &kp SLASH
+    &kp N1  &mo 6  &lt 1 SPACE  &lt 5 TAB  &kp N2          &kp N3  &lt 3 RET  &lt 2 BSPC  &mo 4    &kp N4
             >;
 
             sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
@@ -35,7 +47,7 @@
             bindings = <
     &none     &none     &none      &none      &none               &kp K_AGAIN  &kp K_PASTE  &kp K_COPY  &kp K_CUT  &kp K_UNDO
     &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &caps_word          &kp CAPS     &kp LEFT     &kp DOWN    &kp UP     &kp RIGHT
-    &none     &kp RALT  &none      &none      &none               &kp INS      &kp HOME     &kp PG_DN   &kp PG_UP  &kp END
+    &none     &none     &none      &none      &none               &kp INS      &kp HOME     &kp PG_DN   &kp PG_UP  &kp END
     &kp N1    &none     &none      &none      &kp N2              &kp N3       &kp RET      &kp BSPC    &kp DEL    &kp N4
             >;
 
@@ -47,7 +59,7 @@
             bindings = <
     &kp LBKT   &kp N7   &kp N8  &kp N9     &kp RBKT           &none   &none      &none      &none     &none
     &kp SEMI   &kp N4   &kp N5  &kp N6     &kp EQUAL          &none   &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI
-    &kp GRAVE  &kp N1   &kp N2  &kp N3     &kp BSLH           &none   &none      &none      &kp RALT  &none
+    &kp GRAVE  &kp N1   &kp N2  &kp N3     &kp BSLH           &none   &none      &none      &none     &none
     &kp N1     &kp DOT  &kp N0  &kp MINUS  &kp N2             &kp N3  &none      &none      &none     &kp N4
             >;
 
@@ -55,12 +67,12 @@
         };
 
         symbol_layer {
-// 3: SYM
+// 3: SYM, NUM + SHIFT can be used instead
             bindings = <
-    &kp LBRC   &kp AMPS  &kp ASTRK  &kp LPAR   &kp RBRC           &none   &none      &none      &none     &none
-    &kp COLON  &kp DLLR  &kp PRCNT  &kp CARET  &kp PLUS           &none   &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI
-    &kp TILDE  &kp EXCL  &kp AT     &kp HASH   &kp PIPE           &none   &none      &none      &kp RALT  &none
-    &kp N1     &kp LPAR  &kp RPAR   &kp UNDER  &kp N2             &kp N3  &none      &none      &none    &kp N4
+    &kp LBRC   &kp AMPS  &kp ASTRK  &kp LPAR   &kp RBRC          &none   &none      &none      &none     &none
+    &kp COLON  &kp DLLR  &kp PRCNT  &kp CARET  &kp PLUS          &none   &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI
+    &kp TILDE  &kp EXCL  &kp AT     &kp HASH   &kp PIPE          &none   &none      &none      &none     &none
+    &kp N1     &kp LPAR  &kp RPAR   &kp UNDER  &kp N2            &kp N3  &none      &none      &none     &kp N4
             >;
 
             sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
@@ -69,10 +81,10 @@
         function_layer {
 // 4: FUNC
             bindings = <
-    &kp F12  &kp F7     &kp F8     &kp F9   &kp PSCRN                &none   &none      &none      &none     &none
-    &kp F11  &kp F4     &kp F5     &kp F6   &kp SLCK                 &none   &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI
-    &kp F10  &kp F1     &kp F2     &kp F3   &kp PAUSE_BREAK          &none   &none      &none      &kp RALT  &none
-    &kp N1   &kp K_APP  &kp SPACE  &kp TAB  &kp N2                   &kp N3  &none      &none      &none     &kp N4
+    &kp F12  &kp F7     &kp F8     &kp F9     &kp PSCRN                &none   &none       &none       &none      &none
+    &kp F11  &kp F4     &kp F5     &kp F6     &kp SLCK                 &none   &skq LSHFT  &skq LCTRL  &skq LALT  &skq LGUI
+    &kp F10  &kp F1     &kp F2     &kp F3     &kp PAUSE_BREAK          &none   &none       &none       &none      &none
+    &kp N1   &kp ESC    &kp SPACE  &kp K_APP  &kp N2                   &kp N3  &none       &none       &none      &kp N4
             >;
 
             sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
@@ -81,10 +93,10 @@
         mouse_layer {
 // 5: MOUSE,  NOT SUPPORTED YET
             bindings = <
-    &none     &none     &none      &none      &none              &kp K_AGAIN  &kp K_PASTE  &kp K_COPY  &kp K_CUT  &kp K_UNDO
-    &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none              &none        &none        &none       &none      &none
-    &none     &kp RALT  &none      &none      &none              &none        &none        &none       &none      &none
-    &kp N1    &none     &none      &none      &kp N2             &kp N3       &none        &none       &none      &kp N4
+    &none     &none     &none      &none      &none           &kp K_AGAIN  &kp K_PASTE  &kp K_COPY  &kp K_CUT  &kp K_UNDO
+    &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none           &none        &none        &none       &none      &none
+    &none     &none     &none      &none      &none           &none        &none        &none       &none      &none
+    &kp N1    &none     &none      &none      &kp N2          &kp N3       &none        &none       &none      &kp N4
             >;
 
             sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
@@ -93,10 +105,10 @@
         media_layer {
 // 6: Media
             bindings = <
-    &none     &none     &none      &none      &none              &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI
-    &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none              &kp EP_TOG       &kp C_PREV       &kp C_VOL_DN     &kp C_VOL_UP     &kp C_NEXT
-    &none     &kp RALT  &none      &none      &none              &out OUT_TOG     &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3
-    &kp N1    &none     &none      &none      &kp N2             &kp N3           &kp C_STOP       &kp C_PP         &kp C_MUTE       &kp N4
+    &none      &none      &none       &none       &none           &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI
+    &skq LGUI  &skq LALT  &skq LCTRL  &skq LSHFT  &none           &kp EP_TOG       &kp C_PREV       &kp C_VOL_DN     &kp C_VOL_UP     &kp C_NEXT
+    &none      &none      &none       &none       &none           &out OUT_TOG     &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3
+    &kp N1     &none      &none       &none       &kp N2          &kp N3           &kp C_STOP       &kp C_PP         &kp C_MUTE       &kp N4
             >;
 
             sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
