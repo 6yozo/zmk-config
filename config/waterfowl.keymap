@@ -383,10 +383,10 @@
         base_wen_layer {
 // 0: COLEMAK-DH
             bindings = <
-    &to WEN_DL   &kp W       &kp F          &kp P    &kp B           &kp J   &kp L            &kp U             &kp Y     &kp Q
-    &kp A        &kp R       &kp S          &kp T    &kp G           &kp M   &kp N            &kp E             &kp I     &kp O
-    &to WEN_DAL  &to WEN_AL  &kp C          &kp D    &kp V           &kp K   &kp H            &kp SLASH         &kp X     &kp Z
-    &kp N1       &mo MEDIA   &lt NAV SPACE  &kp TAB  &kp N2          &kp N3  &lt WEN_SYM RET  &lt WEN_NUM BSPC  &mo FUNC  &kp N4
+    &to WEN_DL   &kp W       &kp F          &kp P    &kp B           &kp J   &kp L        &kp U                 &kp Y     &kp Q
+    &kp A        &kp R       &kp S          &kp T    &kp G           &kp M   &kp N        &kp E                 &kp I     &kp O
+    &to WEN_DAL  &to WEN_AL  &kp C          &kp D    &kp V           &kp K   &kp H        &kp SLASH             &kp X     &kp Z
+    &kp N1       &mo MEDIA   &lt NAV SPACE  &kp TAB  &kp N2          &kp N3  &skq LSHFT   &lt WEN_NUM LC(BSPC)  &mo FUNC  &kp N4
             >;
 
             sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
@@ -408,11 +408,11 @@
         };
 
         number_layer {
-// 2: NUM
+// 2: NUM, KP_DOT would be better here instad of DOT, but num lock state interferes with KP_DOT.
             bindings = <
-    &kp LBKT   &kp N7   &kp N8  &kp N9     &kp RBKT           &none   &none      &none      &none     &none
-    &kp SEMI   &kp N4   &kp N5  &kp N6     &kp EQUAL          &none   &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI
-    &kp GRAVE  &kp N1   &kp N2  &kp N3     &kp BSLH           &none   &none      &none      &none     &none
+    &kp LBKT   &kp N7      &kp N8  &kp N9     &kp RBKT           &none   &none      &none      &none     &none
+    &kp SEMI   &kp N4      &kp N5  &kp N6     &kp EQUAL          &none   &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI
+    &kp GRAVE  &kp N1      &kp N2  &kp N3     &kp BSLH           &none   &none      &none      &none     &none
     &kp N1     &kp DOT  &kp N0  &kp MINUS  &kp N2             &kp N3  &none      &none      &none     &kp N4
             >;
 
