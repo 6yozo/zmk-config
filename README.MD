@@ -57,7 +57,9 @@ Design goals:
 - Optimize for typing prose over other activities.
 
 - All punctuation is available as a single keypress without the need
-  to use the SHIFT modifier. Punctuations: .,;:!?'"-
+  to use the SHIFT modifier. Punctuations are: '.,;:!?'"-'. I have also
+  added: '/<>', because this three is placed with keys having punctuations on
+  the english layout.
 
 - Avoid SFBs when typing accents.
 
@@ -78,7 +80,10 @@ Implementation
 I have mirrored the Q, Z and X keys on the Colemak-DH layout and mixed
 up the punctuations a little. I think that mirroring is easy to learn.
 
-### English Prose Layer
+
+Capital X marks the unused keys.
+
+### English Layer
 
 ```
 ,  w  f  p  b  j  l  u  y  q
@@ -86,7 +91,35 @@ a  r  s  t  g  m  n  e  i  o
 .  '  c  d  v  k  h  /  x  z
 ```
 
-experiments:
+### Acute Layer
+```
+X  X  X  X  X  X  X  ú  X  X
+X  X  X  X  X  X  ,  é  í  ó
+X  X  X  X  X  X  <  X  X  X
+```
+
+### Acute 2 Layer
+```
+X  X  X  X  X  X  X  X  X  X
+á  '  "  .  X  X  X  X  X  X
+X  X  X  >  X  X  X  X  X  X
+```
+
+### Double Acute Layer
+```
+X  X  X  X  X  X  X  ü  X  X
+X  X  X  X  X  X  !  ;  /  ő
+X  X  X  X  X  X  X  X  X  X
+```
+
+### Diaresis Layer
+```
+X  X  X  X  X  X  X  ü  X  X
+X  X  X  X  X  X  -  ?  :  ö
+X  X  X  X  X  X  X  X  X  X
+```
+
+### Experiments:
 
 ```
 b l x g v j p ' u ,
@@ -106,11 +139,12 @@ n o r t v  y h e s i
 x / j w q  f d ' g ,
 ```
 
-### Acute Prose Layer
-
-### Double Acute Prose Layer
-
-### Diaresis Prose Layer
+When generating layouts I would like use different weights than the
+Colemak-DH Typing Effort Model.
+- For me the lower row keys are more comfortable than the upper row
+  keys.
+- Pressing buttons with the middle finger is more comfortable than
+  with index finger(probably because it is longer).
 
 Tap Hold and typing
 ---
