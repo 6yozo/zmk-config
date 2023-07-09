@@ -11,6 +11,11 @@ General Design Goals
 - Every button on the US ANSI layout should have an equivalent on the
   6yozu layout.
 
+- Prefer typing with rolling keypresses. Rolling means overlapping
+  keypresses like: Key1 down, Key2 down, Key1 up, Key2 up.
+
+- Alternate keypresses between hands as much as posible.
+
 - There is no Right Alt(Alt Gr) key on the layout.
 
 - The Colmak-DOX layers comprise letters, accents, punctuations, and
@@ -51,6 +56,9 @@ Design goals:
 
 - Optimize for typing prose over other activities.
 
+- All punctuation is available as a single keypress without the need
+  to use the SHIFT modifier. Punctuations: .,;:!?'"-
+
 - Avoid SFBs when typing accents.
 
 Rational:
@@ -72,24 +80,31 @@ up the punctuations a little. I think that mirroring is easy to learn.
 
 ### English Prose Layer
 
+```
 ,  w  f  p  b  j  l  u  y  q
 a  r  s  t  g  m  n  e  i  o
 .  '  c  d  v  k  h  /  x  z
+```
 
 experiments:
 
+```
 b l x g v j p ' u ,
 n s r t k q h e i o
 c w z m f y d / . a
+```
 
+```
 b c l w q  k p u . a
 n s r t v  y h e i o
 x g j m z  f d ' , /
+```
 
+```
 b a l m z  k p u c .
 n o r t v  y h e s i
 x / j w q  f d ' g ,
-
+```
 
 ### Acute Prose Layer
 
