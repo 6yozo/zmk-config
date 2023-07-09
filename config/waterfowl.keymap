@@ -30,11 +30,11 @@
 #define WEN_BASE 0
 #define NAV      1
 #define WEN_NUM  2
-#define WEN_SYM  3
-#define FUNC     4
-#define MEDIA    5
+#define FUNC     3
+#define MEDIA    4
 // Acute
-#define WEN_AL   6
+#define WEN_AL   5
+#define WEN_AL2  6
 // Double acute
 #define WEN_DAL  7
 // Diaresis
@@ -88,7 +88,7 @@
         compatible = "zmk,behavior-mod-morph";
         label = "A_ACUTE_WITH_SHIFT";
         #binding-cells = <0>;
-        bindings = <&m_a_acute_wen>, <&m_cap_a_acute_wen>;
+        bindings = <&m_a_acute2_wen>, <&m_cap_a_acute2_wen>;
         mods = <(MOD_RSFT|MOD_LSFT)>;
       };
 
@@ -188,28 +188,6 @@
                 ;
         )
 
-        ZMK_MACRO(m_a_acute_wen,
-            wait-ms = <13>;
-            tap-ms = <13>;
-            bindings
-                = <&macro_press   &kp LALT>
-                , <&macro_tap     &kp KP_N1 &kp KP_N6 &kp KP_N0>
-                , <&macro_release &kp LALT>
-                , <&macro_tap     &to WEN_BASE>
-                ;
-        )
-
-        ZMK_MACRO(m_cap_a_acute_wen,
-            wait-ms = <13>;
-            tap-ms = <13>;
-            bindings
-                = <&macro_press   &kp LALT>
-                , <&macro_tap     &kp KP_N0 &kp KP_N1 &kp KP_N9 &kp KP_N3>
-                , <&macro_release &kp LALT>
-                , <&macro_tap     &to WEN_BASE>
-                ;
-        )
-        
         ZMK_MACRO(m_o_acute_wen,
             wait-ms = <13>;
             tap-ms = <13>;
@@ -281,6 +259,37 @@
             tap-ms = <25>;
             bindings
                 = <&macro_tap     &sqt_fslh_wen>
+                , <&macro_tap     &to WEN_BASE>
+                ;
+        )
+        
+        ZMK_MACRO(m_a_acute2_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_press   &kp LALT>
+                , <&macro_tap     &kp KP_N1 &kp KP_N6 &kp KP_N0>
+                , <&macro_release &kp LALT>
+                , <&macro_tap     &to WEN_BASE>
+                ;
+        )
+
+        ZMK_MACRO(m_cap_a_acute2_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_press   &kp LALT>
+                , <&macro_tap     &kp KP_N0 &kp KP_N1 &kp KP_N9 &kp KP_N3>
+                , <&macro_release &kp LALT>
+                , <&macro_tap     &to WEN_BASE>
+                ;
+        )
+
+        ZMK_MACRO(m_dqt_qmark_acute2_wen,
+            wait-ms = <25>;
+            tap-ms = <25>;
+            bindings
+                = <&macro_tap     &dqt_qmark_wen>
                 , <&macro_tap     &to WEN_BASE>
                 ;
         )
@@ -397,11 +406,11 @@
         compatible = "zmk,keymap";
 
         base_wen_layer {
-// 0: COLEMAK-DH
+// COLEMAK-DH
             bindings = <
     &to WEN_DAL  &kp W       &kp F          &kp P    &kp B           &kp J   &kp L        &kp U                 &kp Y     &kp Q
     &kp A        &kp R       &kp S          &kp T    &kp G           &kp M   &kp N        &kp E                 &kp I     &kp O
-    &to WEN_DL   &to WEN_AL  &kp C          &kp D    &kp V           &kp K   &kp H        &dqt_qmark_wen        &kp X     &kp Z
+    &to WEN_DL   &to WEN_AL  &kp C          &kp D    &kp V           &kp K   &kp H        &to WEN_AL2           &kp X     &kp Z
     &kp N1       &mo MEDIA   &lt NAV SPACE  &kp TAB  &kp N2          &kp N3  &skq LSHFT   &lt WEN_NUM LC(BSPC)  &mo FUNC  &kp N4
             >;
 
@@ -409,7 +418,7 @@
         };
 
         navigation_layer {
-/* 1: NAV
+/* NAV
  * Bootloader does not work on the peripherial side of the split keyboard only on the central side.
  * The reset button can be used to go into bootloader mode instead.
  */
@@ -424,7 +433,7 @@
         };
 
         number_layer {
-// 2: NUM, KP_DOT would be better here instad of DOT, but num lock state interferes with KP_DOT.
+// NUM, KP_DOT would be better here instad of DOT, but num lock state interferes with KP_DOT.
             bindings = <
     &kp LBKT   &kp N7   &kp N8  &kp N9     &kp RBKT           &none   &none      &none      &none     &none
     &kp SEMI   &kp N4   &kp N5  &kp N6     &kp EQUAL          &none   &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI
@@ -435,20 +444,8 @@
             sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
         };
 
-        symbol_layer {
-// 3: SYM, NUM + SHIFT can be used instead
-            bindings = <
-    &kp LBRC   &kp AMPS  &kp ASTRK  &kp LPAR   &kp RBRC          &none   &none      &none      &none     &none
-    &kp COLON  &kp DLLR  &kp PRCNT  &kp CARET  &kp PLUS          &none   &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI
-    &kp TILDE  &kp EXCL  &kp AT     &kp HASH   &kp PIPE          &none   &none      &none      &none     &none
-    &kp N1     &kp LPAR  &kp RPAR   &kp UNDER  &kp N2            &kp N3  &none      &none      &none     &kp N4
-            >;
-
-            sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
-        };
-
         function_layer {
-// 4: FUNC
+// FUNC
             bindings = <
     &kp F12  &kp F7   &kp F8     &kp F9     &kp PSCRN                &none   &none       &none       &none      &none
     &kp F11  &kp F4   &kp F5     &kp F6     &kp SLCK                 &none   &skq LSHFT  &skq LCTRL  &skq LALT  &skq LGUI
@@ -460,7 +457,7 @@
         };
 
         media_layer {
-// 6: Media
+// MEDIA
             bindings = <
     &none      &none      &none       &none       &none           &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI
     &skq LGUI  &skq LALT  &skq LCTRL  &skq LSHFT  &none           &kp EP_TOG       &kp C_PREV       &kp C_VOL_DN     &kp C_VOL_UP     &kp C_NEXT
@@ -472,10 +469,10 @@
         };
 
         acute_wen_layer {
-// 7: Acute Layer
+// ACUTE LAYER
             bindings = <
     &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &u_acute_wen  &to WEN_BASE           &to WEN_BASE
-    &a_acute_wen  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &e_acute_wen  &i_acute_wen           &o_acute_wen
+    &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &e_acute_wen  &i_acute_wen           &o_acute_wen
     &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &m_sqt_fslh_acute_wen  &to WEN_BASE
     &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE
           >;
@@ -483,8 +480,20 @@
             sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
         };
 
+        acute2_wen_layer {
+// ACUTE LAYER 2
+            bindings = <
+    &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE             &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE
+    &a_acute_wen  &to WEN_BASE  &to WEN_BASE  &m_dqt_qmark_acute2_wen  &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE
+    &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE             &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE
+    &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE             &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE
+          >;
+
+            sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
+        };
+
         dacute_wen_layer {
-// 8: Double Acute Layer
+// DOUBLE ACUTE LAYER
             bindings = <
     &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &u_dacute_wen  &to WEN_BASE  &m_comma_dacute_wen 
     &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &to WEN_BASE   &to WEN_BASE  &o_dacute_wen
@@ -496,7 +505,7 @@
         };
 
         diaresis_layer {
-// 9: Diaresis Layer
+// DIARESIS LAYER
             bindings = <
     &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &u_diaresis_wen  &to WEN_BASE  &to WEN_BASE
     &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &to WEN_BASE     &to WEN_BASE  &o_diaresis_wen
