@@ -480,7 +480,7 @@
  */
             bindings = <
     &kp TAB    &kp DEL       &kp K_APP   &none       &kp KP_NUMLOCK          &kp K_AGAIN  &kp K_PASTE  &kp K_COPY  &kp K_CUT  &kp K_UNDO
-    &kp LGUI   &kp LALT      &kp LCTRL   &kp LSHFT   &caps_word              &kp CAPS     &kp LEFT     &kp DOWN    &kp UP     &kp RIGHT
+    &kp LGUI   &kp LALT      &kp LCTRL   &kp LSHFT   &caps_word              &kp CAPS     &kp LEFT     &kp UP      &kp DOWN   &kp RIGHT
     &skq LGUI  &skq LALT     &skq LCTRL  &skq LSHFT  &kp SCROLLLOCK          &kp INS      &kp HOME     &kp PG_DN   &kp PG_UP  &kp END
     &kp N1     &to WEN_BASE  &kp SPACE   &none       &kp N2                  &kp N3       &to FUNC     &kp RET     &kp BSPC   &kp N4
             >;
