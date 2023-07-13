@@ -149,6 +149,41 @@
  //
  // Unicode Sequences do not handle shift states automatically for capital
  // letters
+        ZMK_MACRO(m_lgui_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_tap     &skq LGUI>
+                , <&macro_tap     &to WEN_BASE>
+                ;
+        )
+
+        ZMK_MACRO(m_lalt_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_tap     &skq LALT>
+                , <&macro_tap     &to WEN_BASE>
+                ;
+        )
+
+        ZMK_MACRO(m_lctrl_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_tap     &skq LCTRL>
+                , <&macro_tap     &to WEN_BASE>
+                ;
+        )
+
+        ZMK_MACRO(m_lshft_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_tap     &skq LSHFT>
+                , <&macro_tap     &to WEN_BASE>
+                ;
+        )
 
         ZMK_MACRO(m_e_acute_wen,
             wait-ms = <13>;
@@ -476,10 +511,10 @@
         navigation_layer {
 // WEN_NAV
             bindings = <
-    &none      &kp DEL        &kp K_APP   &none        &kp KP_NUMLOCK          &kp K_AGAIN  &kp K_PASTE  &kp K_COPY  &kp K_CUT     &kp K_UNDO
-    &kp LGUI   &kp LALT       &kp LCTRL   &kp LSHFT    &caps_word              &kp CAPS     &kp LEFT     &kp UP      &kp DOWN      &kp RIGHT
-    &skq LGUI  &skq LALT      &skq LCTRL  &skq LSHFT   &kp SCROLLLOCK          &kp INS      &kp HOME     &kp PG_UP   &kp PG_DN     &kp END
-    &kp N1     &to WEN_MEDIA  &kp BSPC    &kp TAB      &kp N2                  &kp N3       &to WEN_NUM  &kp RET     &to WEN_FUNC  &kp N4
+    &none        &kp DEL        &kp K_APP     &none         &kp KP_NUMLOCK          &kp K_AGAIN  &kp K_PASTE  &kp K_COPY  &kp K_CUT     &kp K_UNDO
+    &kp LGUI     &kp LALT       &kp LCTRL     &kp LSHFT     &caps_word              &kp CAPS     &kp LEFT     &kp UP      &kp DOWN      &kp RIGHT
+    &m_lgui_wen  &m_lalt_wen    &m_lctrl_wen  &m_lshft_wen  &kp SCROLLLOCK          &kp INS      &kp HOME     &kp PG_UP   &kp PG_DN     &kp END
+    &kp N1       &to WEN_MEDIA  &kp BSPC      &kp TAB       &kp N2                  &kp N3       &to WEN_NUM  &kp RET     &to WEN_FUNC  &kp N4
             >;
 
             sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
@@ -488,10 +523,10 @@
         number_layer {
 // WEN_NUM, KP_DOT would be better here instad of DOT, but num lock state interferes with KP_DOT.
             bindings = <
-    &kp EQUAL &kp N9        &kp N8  &kp N7       &kp FSLH           &kp RBKT   &none       &kp SEMI    &kp GRAVE     &kp LBKT 
-    &kp DOT   &kp N6        &kp N5  &kp N4       &kp MINUS          &kp COMMA  &kp LSHFT   &kp LCTRL   &kp LALT      &kp LGUI
-    &kp PLUS  &kp N3        &kp N2  &kp N1       &kp STAR           &kp BSLH   &skq LSHFT  &skq LCTRL  &skq LALT     &skq LGUI     
-    &kp N1    &to WEN_BASE  &kp N0  &to WEN_NAV  &kp N2             &kp N3     &none       &kp RET     &to WEN_BASE  &kp N4
+    &kp EQUAL &kp N9        &kp N8  &kp N7       &kp FSLH           &kp RBKT   &none         &kp SEMI      &kp GRAVE     &kp LBKT 
+    &kp DOT   &kp N6        &kp N5  &kp N4       &kp MINUS          &kp COMMA  &kp LSHFT     &kp LCTRL     &kp LALT      &kp LGUI
+    &kp PLUS  &kp N3        &kp N2  &kp N1       &kp STAR           &kp BSLH   &m_lshft_wen  &m_lctrl_wen  &m_lalt_wen   &m_lgui_wen
+    &kp N1    &to WEN_BASE  &kp N0  &to WEN_NAV  &kp N2             &kp N3     &none         &kp RET       &to WEN_BASE  &kp N4
             >;
 
             sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
