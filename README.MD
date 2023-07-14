@@ -25,6 +25,8 @@ General Design Goals
 
 - There is no Right Alt(Alt Gr) key on the layout.
 
+- Right thumb home key takes back to base layer on every layer.
+
 - The Colmak-DOX layers comprise letters, accents, punctuations, and
   modifiers for writing prose only.
 
@@ -44,6 +46,23 @@ General Design Goals
 - The ESC key is on the function layer. It remains in its original
   location. The APP key is on to the outer thumb key. The TAB key is
   not on the layer.
+
+NUM layer
+---
+
+Designed to enter more than a single digit.
+
+One can e_ecute multiple calculations with tha Calculator app and
+enter a series of numbers into a LibreOffice spreadsheet without
+leaving this layer.
+
+NAV layer
+--
+
+Desigend for more than a single navigational operation.
+
+In addition to move the cursor around, one can navigate between
+windows, tabs and controls on a form without leaving this layer.
 
 Colemak-DOX
 ---
@@ -91,42 +110,75 @@ I have mirrored the Q, Z and X keys on the Colemak-DH layout and mixed
 up the punctuations a little. I think that mirroring is easy to learn.
 
 
-Capital X marks the unused keys.
+Underscore (_) marks unused keys.
 
 ### English Layer
 
 ```
-,  w  f  p  b  j  l  u  y  q
-a  r  s  t  g  m  n  e  i  o
-.  '  c  d  v  k  h  /  x  z
+,  w    f    p    b          j  l    u     y    q
+a  r    s    t    g          m  n    e     i    o
+.  '    c    d    v          k  h    /     x    z
+_  alt  spc  NAV  _          _  NUM  shft  ctr  _
 ```
 
-### Acute Layer
+### Acute Layer (')
 ```
-X  X  X  X  X  X  X  ú  X  X
-X  X  X  X  X  X  ,  é  í  ó
-X  X  X  X  X  X  <  X  X  X
-```
-
-### Acute 2 Layer
-```
-X  X  X  X  X  X  X  X  X  X
-á  '  "  .  X  X  X  X  X  X
-X  X  X  >  X  X  X  X  X  X
+_  _  _  _  _  _  _  ú  _  _
+_  _  _  _  _  _  ,  é  í  ó
+_  _  _  _  _  _  <  _  _  _
 ```
 
-### Double Acute Layer
+### Acute 2 Layer (/)
 ```
-X  X  X  X  X  X  X  ü  X  X
-X  X  X  X  X  X  !  ;  /  ő
-X  X  X  X  X  X  X  X  X  X
+_  _  _  _  _  _  _  _  _  _
+á  '  "  .  _  _  _  _  _  _
+_  _  _  >  _  _  _  _  _  _
 ```
 
-### Diaresis Layer
+### Double Acute Layer (,)
 ```
-X  X  X  X  X  X  X  ü  X  X
-X  X  X  X  X  X  -  ?  :  ö
-X  X  X  X  X  X  X  X  X  X
+_  _  _  _  _  _  _  ü  _  _
+_  _  _  _  _  _  !  ;  /  ő
+_  _  _  _  _  _  _  _  _  _
+```
+
+### Diaresis Layer (.)
+```
+_  _  _  _  _  _  _  ü  _  _
+_  _  _  _  _  _  -  ?  :  ö
+_  _  _  _  _  _  _  _  _  _
+```
+
+### NAV Layer
+```
+APP  DEL  BSP   C(BSP)  NUMLOCK             AGAIN  PASTE  COPY   CUT    UNDO
+gui  ESC  RET   TAB     caps_word           CAPS   LEFT   UP     DOWN   RIGHT
+GUI  ALT  CTRL  SHFT    SCROLLLOCK          INS    HOME   PG_UP  PG_DN  END
+_    _    _     MEDIA   _                   _      NUM    BASE   ret    _
+```
+
+### NUM layer
+```
+=  9    8  7    /          ]  _     ;     `    [ 
+.  6    5  4    -          ,  TAB   RET   ESC  gui
++  3    2  1    *          \  SHFT  CTRL  ALT  GUI
+_  esc  0  NAV  _          _  FUNC  BASE  _    _
+```
+
+### F layer
+```
+F12  F9  F8  F7  PSCRN          _   _  _     _    _
+F11  F6  F5  F4  SLCK           _   _  _     _    gui
+F10  F3  F2  F1  PAUSE          _   _  _     _    _
+_    _   _   _   _              _   _  BASE  _    _
+```
+
+### MEDIA layer
+```
+_    _    _     _  _          RGB_TOG  RGB_EFF  RGB_HUI  RGB_SAI  RGB_BRI
+gui  _    _     _  _          EP       PREV     VOL_DN   VOL_UP   NEXT
+_    _    _     _  _          OUT      BT 0     BT 1     BT 2     BT 3
+_    _    MUTE  _  _          _        STOP     BASE     PP       _
 ```
 
 ### Experiments:

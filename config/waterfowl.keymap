@@ -148,39 +148,30 @@
  // key to make unicode sequences work.
  //
  // Unicode Sequences do not handle shift states automatically for capital
- // letters
-        ZMK_MACRO(m_lgui_wen,
+ // letters 
+        ZMK_MACRO(m_esc_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_tap     &kp ESC>
+                , <&macro_tap     &to WEN_BASE>
+                ;
+        )
+
+        ZMK_MACRO(m_ret_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_tap     &kp RET>
+                , <&macro_tap     &to WEN_BASE>
+                ;
+        )
+
+       ZMK_MACRO(m_lgui_wen,
             wait-ms = <13>;
             tap-ms = <13>;
             bindings
                 = <&macro_tap     &skq LGUI>
-                , <&macro_tap     &to WEN_BASE>
-                ;
-        )
-
-        ZMK_MACRO(m_lalt_wen,
-            wait-ms = <13>;
-            tap-ms = <13>;
-            bindings
-                = <&macro_tap     &skq LALT>
-                , <&macro_tap     &to WEN_BASE>
-                ;
-        )
-
-        ZMK_MACRO(m_lctrl_wen,
-            wait-ms = <13>;
-            tap-ms = <13>;
-            bindings
-                = <&macro_tap     &skq LCTRL>
-                , <&macro_tap     &to WEN_BASE>
-                ;
-        )
-
-        ZMK_MACRO(m_lshft_wen,
-            wait-ms = <13>;
-            tap-ms = <13>;
-            bindings
-                = <&macro_tap     &skq LSHFT>
                 , <&macro_tap     &to WEN_BASE>
                 ;
         )
@@ -499,10 +490,10 @@
         base_wen_layer {
 // COLEMAK-DH
             bindings = <
-    &to WEN_DAL  &kp W       &kp F      &kp P        &kp B           &kp J   &kp L        &kp U        &kp Y         &kp Q
-    &kp A        &kp R       &kp S      &kp T        &kp G           &kp M   &kp N        &kp E        &kp I         &kp O
-    &to WEN_DL   &to WEN_AL  &kp C      &kp D        &kp V           &kp K   &kp H        &to WEN_AL2  &kp X         &kp Z
-    &kp N1       &kp ESC     &kp SPACE  &to WEN_NAV  &kp N2          &kp N3  &to WEN_NUM  &skq LSHFT   &kp LC(BSPC)  &kp N4
+    &to WEN_DAL  &kp W       &kp F      &kp P        &kp B           &kp J   &kp L        &kp U        &kp Y       &kp Q
+    &kp A        &kp R       &kp S      &kp T        &kp G           &kp M   &kp N        &kp E        &kp I       &kp O
+    &to WEN_DL   &to WEN_AL  &kp C      &kp D        &kp V           &kp K   &kp H        &to WEN_AL2  &kp X       &kp Z
+    &kp N1       &skq LALT   &kp SPACE  &to WEN_NAV  &kp N2          &kp N3  &to WEN_NUM  &skq LSHFT   &skq LCTRL  &kp N4
             >;
 
             sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
@@ -511,10 +502,10 @@
         navigation_layer {
 // WEN_NAV
             bindings = <
-    &kp K_APP    &kp DEL       &kp BSPC      &none          &kp KP_NUMLOCK          &kp K_AGAIN  &kp K_PASTE  &kp K_COPY  &kp K_CUT     &kp K_UNDO
-    &m_lgui_wen  &m_lalt_wen   &m_lctrl_wen  &m_lshft_wen   &caps_word              &kp CAPS     &kp LEFT     &kp UP      &kp DOWN      &kp RIGHT
-    &kt LGUI     &kt LALT      &kt LCTRL     &kt LSHFT      &kp SCROLLLOCK          &kp INS      &kp HOME     &kp PG_UP   &kp PG_DN     &kp END
-    &kp N1       &to WEN_BASE  &kp TAB       &to WEN_MEDIA  &kp N2                  &kp N3       &to WEN_NUM  &kp RET     &to WEN_FUNC  &kp N4
+    &kp K_APP    &kp DEL     &kp BSPC   &kp LC(BSPC)   &kp KP_NUMLOCK          &kp K_AGAIN  &kp K_PASTE  &kp K_COPY    &kp K_CUT     &kp K_UNDO
+    &m_lgui_wen  &kp ESC     &kp RET    &kp TAB        &caps_word              &kp CAPS     &kp LEFT     &kp UP        &kp DOWN      &kp RIGHT
+    &kt LGUI     &kt LALT    &kt LCTRL  &kt LSHFT      &kp SCROLLLOCK          &kp INS      &kp HOME     &kp PG_UP     &kp PG_DN     &kp END
+    &kp N1       &none       &none      &to WEN_MEDIA  &kp N2                  &kp N3       &to WEN_NUM  &to WEN_BASE  &m_ret_wen    &kp N4
             >;
 
             sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
@@ -523,10 +514,10 @@
         number_layer {
 // WEN_NUM, KP_DOT would be better here instad of DOT, but num lock state interferes with KP_DOT.
             bindings = <
-    &kp EQUAL &kp N9        &kp N8  &kp N7       &kp FSLH           &kp RBKT   &none         &kp SEMI      &kp GRAVE     &kp LBKT 
-    &kp DOT   &kp N6        &kp N5  &kp N4       &kp MINUS          &kp COMMA  &m_lshft_wen  &m_lctrl_wen  &m_lalt_wen   &m_lgui_wen
-    &kp PLUS  &kp N3        &kp N2  &kp N1       &kp STAR           &kp BSLH   &kt LSHFT     &kt LCTRL     &kt LALT      &kt LGUI
-    &kp N1    &to WEN_BASE  &kp N0  &to WEN_NAV  &kp N2             &kp N3     &none         &kp RET       &to WEN_BASE  &kp N4
+    &kp EQUAL  &kp N9      &kp N8  &kp N7       &kp FSLH           &kp RBKT   &none         &kp SEMI      &kp GRAVE  &kp LBKT 
+    &kp DOT    &kp N6      &kp N5  &kp N4       &kp MINUS          &kp COMMA  &kp TAB       &kp RET       &kp ESC    &m_lgui_wen
+    &kp PLUS   &kp N3      &kp N2  &kp N1       &kp STAR           &kp BSLH   &kt LSHFT     &kt LCTRL     &kt LALT   &kt LGUI
+    &kp N1     &m_esc_wen  &kp N0  &to WEN_NAV  &kp N2             &kp N3     &to WEN_FUNC  &to WEN_BASE  &none      &kp N4
             >;
 
             sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
@@ -535,10 +526,10 @@
         function_layer {
 // WEN_FUNC
             bindings = <
-    &kp F12  &kp F9        &kp F8     &kp F7  &kp PSCRN                &none   &none       &none       &none         &none
-    &kp F11  &kp F6        &kp F5     &kp F4  &kp SLCK                 &none   &skq LSHFT  &skq LCTRL  &skq LALT     &skq LGUI
-    &kp F10  &kp F3        &kp F2     &kp F1  &kp PAUSE_BREAK          &none   &none       &none       &none         &none
-    &kp N1   &to WEN_BASE  &kp SPACE  &none   &kp N2                   &kp N3  &none       &none       &to WEN_BASE  &kp N4
+    &kp F12  &kp F9  &kp F8  &kp F7  &kp PSCRN                &none   &none  &none         &none  &none
+    &kp F11  &kp F6  &kp F5  &kp F4  &kp SLCK                 &none   &none  &none         &none  &skq LGUI
+    &kp F10  &kp F3  &kp F2  &kp F1  &kp PAUSE_BREAK          &none   &none  &none         &none  &none
+    &kp N1   &none   &none   &none   &kp N2                   &kp N3  &none  &to WEN_BASE  &none  &kp N4
             >;
 
             sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
@@ -547,10 +538,10 @@
         media_layer {
 // WEN_MEDIA
             bindings = <
-    &none      &none         &none       &none       &none           &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI
-    &skq LGUI  &skq LALT    &skq LCTRL   &skq LSHFT  &none           &kp EP_TOG       &kp C_PREV       &kp C_VOL_DN     &kp C_VOL_UP     &kp C_NEXT
-    &none      &none         &kp C_MUTE  &none       &none           &out OUT_TOG     &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3
-    &kp N1     &to WEN_BASE  &none       &none       &kp N2          &kp N3           &kp C_STOP       &kp C_PP         &to WEN_BASE     &kp N4
+    &none      &none  &none       &none  &none           &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI
+    &skq LGUI  &none  &none       &none  &none           &kp EP_TOG       &kp C_PREV       &kp C_VOL_DN     &kp C_VOL_UP     &kp C_NEXT
+    &none      &none  &none       &none  &none           &out OUT_TOG     &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3
+    &kp N1     &none  &kp C_MUTE  &none  &kp N2          &kp N3           &kp C_STOP       &to WEN_BASE     &kp C_PP         &kp N4
             >;
 
             sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
