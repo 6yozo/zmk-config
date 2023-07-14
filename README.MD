@@ -1,18 +1,25 @@
-The 6yozu keyboard layout
+The Lottie keyboard layout
 ===
 
-The 6yozu keyboard layout is based on the Miryoku layout. The core of
-the layout is the Colmak-DOX language layout, which lets you type
-prose in English and Hungarian.
+The Lottie keyboard layout is inspired by the Miryoku layout. The
+layers on the Lottie keyboard layout are devided into two categories.
+
+- The Colmak-DOX language layouts, which lets you type prose in
+  English and Hungarian.
+
+- The Lottie layers for navigation, function keys, typing numbers and
+  media functions.
 
 General Design Goals
 ---
 
-- Every button on the US ANSI layout should have an equivalent on the
-  6yozu layout.
-
 - Prefer typing with rolling keypresses. Rolling means overlapping
   keypresses like: Key1 down, Key2 down, Key1 up, Key2 up.
+
+- Every functionality is accessible by using a single finger only.
+
+- Every button on the US ANSI layout have an equivalent on the Lottie
+  layout.
 
 - Alternate keypresses between hands as much as posible.
 
@@ -73,6 +80,9 @@ using the base layer alone.
   layer switching keys. If we do not change the thumb keys, then we
   can keep the similarity to widespread layouts like Miryoku or
   Seniply.
+
+- When holding a cat in your arm, you still can use your other hand to
+  type.
 
 Implementation
 ---
