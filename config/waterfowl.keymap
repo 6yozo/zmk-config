@@ -735,7 +735,7 @@
             bindings = <
     &kp ESC      &kp BSPC      &kp DEL    &kp K_APP      &kp KP_NUMLOCK          &m_again_wen  &m_paste_wen  &m_copy_wen   &m_cut_wen    &m_undo
     &m_lgui_wen  &kp LC(BSPC)  &kp RET    &kp TAB        &caps_word              &kp CAPS      &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT
-    &kt LGUI     &kt LALT      &kt LCTRL  &kt LSHFT      &kp SCROLLLOCK          &kp INS       &kp HOME      &kp PG_DN     &kp PG_UP     &kp END
+    &kp LGUI     &kp LALT      &kp LCTRL  &kp LSHFT      &kp SCROLLLOCK          &kp INS       &kp HOME      &kp PG_DN     &kp PG_UP     &kp END
     &kp N1       &kp SPACE     &none      &to WEN_MEDIA  &kp N2                  &kp N3        &to WEN_NUM   &to WEN_BASE  &m_ret_wen    &kp N4
             >;
 
@@ -747,7 +747,7 @@
             bindings = <
     &kp EQUAL  &kp N9      &kp N8  &kp N7       &kp FSLH           &none      &none         &kp DEL       &kp BSPC      &kp ESC
     &kp DOT    &kp N6      &kp N5  &kp N4       &kp MINUS          &kp COMMA  &kp TAB       &kp RET       &kp LC(BSPC)  &m_lgui_wen
-    &kp PLUS   &kp N3      &kp N2  &kp N1       &kp STAR           &none      &kt LSHFT     &kt LCTRL     &kt LALT      &kt LGUI
+    &kp PLUS   &kp N3      &kp N2  &kp N1       &kp STAR           &none      &kp LSHFT     &kp LCTRL     &kp LALT      &kp LGUI
     &kp N1     &m_esc_wen  &kp N0  &to WEN_NAV  &kp N2             &kp N3     &to WEN_FUNC  &to WEN_BASE  &kp SPACE     &kp N4
             >;
 
