@@ -27,18 +27,18 @@
 // LAYERS FOR WIN-ENGLISH-QUERTY HOST (WEN)
 //
 // Colemak-DOX
-#define WEN_BASE 0
-#define NAV      1
-#define WEN_NUM  2
-#define FUNC     3
-#define MEDIA    4
+#define WEN_BASE  0
+#define WEN_NAV   1
+#define WEN_NUM   2
+#define WEN_FUNC  3
+#define WEN_MEDIA 4
 // Acute
-#define WEN_AL   5
-#define WEN_AL2  6
+#define WEN_AL    5
+#define WEN_AL2   6
 // Double acute
-#define WEN_DAL  7
+#define WEN_DAL   7
 // Diaresis
-#define WEN_DL   8
+#define WEN_DL    8
 
 / {
     behaviors {
@@ -47,25 +47,9 @@
         label = "STICKY_KEY_QUICK_RELEASE";
         #binding-cells = <1>;
         bindings = <&kp>;
-        release-after-ms = <1000>;
+        release-after-ms = <10000>;
         quick-release;
         ignore-modifiers;
-      };
-
-      dqt_qmark_wen: dqt_qmark_wen_with_shift {
-        compatible = "zmk,behavior-mod-morph";
-        label = "DQT_QMARK_WEN";
-        #binding-cells = <0>;
-        bindings = <&kp DQT>, <&kp QMARK>;
-        mods = <(MOD_RSFT|MOD_LSFT)>;
-      };
-
-      sqt_fslh_wen: sqt_fslh_wen_with_shift {
-        compatible = "zmk,behavior-mod-morph";
-        label = "SQT_FSLH_WEN";
-        #binding-cells = <0>;
-        bindings = <&kp SQT>, <&kp FSLH>;
-        mods = <(MOD_RSFT|MOD_LSFT)>;
       };
 
       o_acute_wen: o_acute_wen_with_shift {
@@ -166,6 +150,300 @@
  // Unicode Sequences do not handle shift states automatically for capital
  // letters
 
+        ZMK_MACRO(m_under_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_tap     &kp UNDER>
+                , <&macro_tap     &to WEN_BASE>
+                ;
+        )
+ 
+        ZMK_MACRO(m_dllr_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_tap     &kp DLLR>
+                , <&macro_tap     &to WEN_BASE>
+                ;
+        )
+ 
+        ZMK_MACRO(m_amps_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_tap     &kp AMPS>
+                , <&macro_tap     &to WEN_BASE>
+                ;
+        )
+
+        ZMK_MACRO(m_pipe_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_tap     &kp PIPE>
+                , <&macro_tap     &to WEN_BASE>
+                ;
+        )
+
+        ZMK_MACRO(m_hash_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_tap     &kp HASH>
+                , <&macro_tap     &to WEN_BASE>
+                ;
+        )
+
+        ZMK_MACRO(m_caret_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_tap     &kp CARET>
+                , <&macro_tap     &to WEN_BASE>
+                ;
+        )
+
+        ZMK_MACRO(m_equal_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_tap     &kp EQUAL>
+                , <&macro_tap     &to WEN_BASE>
+                ;
+        )
+
+        ZMK_MACRO(m_bslh_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_tap     &kp BSLH>
+                , <&macro_tap     &to WEN_BASE>
+                ;
+        )
+
+        ZMK_MACRO(m_plus_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_tap     &kp PLUS>
+                , <&macro_tap     &to WEN_BASE>
+                ;
+        )
+
+        ZMK_MACRO(m_tilde_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_tap     &kp TILDE>
+                , <&macro_tap     &to WEN_BASE>
+                ;
+        )
+
+        ZMK_MACRO(m_grave_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_tap     &kp GRAVE>
+                , <&macro_tap     &to WEN_BASE>
+                ;
+        )
+
+        ZMK_MACRO(m_lpar_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_tap     &kp LPAR>
+                , <&macro_tap     &to WEN_BASE>
+                ;
+        )
+
+        ZMK_MACRO(m_lbkt_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_tap     &kp LBKT>
+                , <&macro_tap     &to WEN_BASE>
+                ;
+        )
+
+        ZMK_MACRO(m_lbrc_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_tap     &kp LBRC>
+                , <&macro_tap     &to WEN_BASE>
+                ;
+        )
+
+        ZMK_MACRO(m_rpar_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_tap     &kp RPAR>
+                , <&macro_tap     &to WEN_BASE>
+                ;
+        )
+
+        ZMK_MACRO(m_rbkt_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_tap     &kp RBKT>
+                , <&macro_tap     &to WEN_BASE>
+                ;
+        )
+        
+        ZMK_MACRO(m_rbrc_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_tap     &kp RBRC>
+                , <&macro_tap     &to WEN_BASE>
+                ;
+        )
+
+        ZMK_MACRO(m_at_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_tap     &kp AT>
+                , <&macro_tap     &to WEN_BASE>
+                ;
+        )
+
+        ZMK_MACRO(m_prcnt_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_tap     &kp PRCNT>
+                , <&macro_tap     &to WEN_BASE>
+                ;
+        )
+
+        ZMK_MACRO(m_star_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_tap     &kp STAR>
+                , <&macro_tap     &to WEN_BASE>
+                ;
+        )
+
+        ZMK_MACRO(m_again_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_press   &kp LCTRL>
+                , <&macro_tap     &kp Y>
+                , <&macro_release &kp LCTRL>
+                ;
+        )
+
+        ZMK_MACRO(m_paste_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_press   &kp LCTRL>
+                , <&macro_tap     &kp V>
+                , <&macro_release &kp LCTRL>
+                ;
+        )
+
+        ZMK_MACRO(m_copy_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_press   &kp LCTRL>
+                , <&macro_tap     &kp C>
+                , <&macro_release &kp LCTRL>
+                ;
+        )
+
+        ZMK_MACRO(m_cut_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_press   &kp LCTRL>
+                , <&macro_tap     &kp X>
+                , <&macro_release &kp LCTRL>
+                ;
+        )
+
+        ZMK_MACRO(m_undo,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_press   &kp LCTRL>
+                , <&macro_tap     &kp Z>
+                , <&macro_release &kp LCTRL>
+                ;
+        )
+
+        ZMK_MACRO(m_esc_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_tap     &kp ESC>
+                , <&macro_tap     &to WEN_BASE>
+                ;
+        )
+
+        ZMK_MACRO(m_ret_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_tap     &kp RET>
+                , <&macro_tap     &to WEN_BASE>
+                ;
+        )
+
+        ZMK_MACRO(m_bspc_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_tap     &kp BSPC>
+                , <&macro_tap     &to WEN_BASE>
+                ;
+        )
+
+        ZMK_MACRO(m_del_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_tap     &kp DEL>
+                , <&macro_tap     &to WEN_BASE>
+                ;
+        )
+        
+        ZMK_MACRO(m_tab_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_tap     &kp TAB>
+                , <&macro_tap     &to WEN_BASE>
+                ;
+        )
+
+
+        ZMK_MACRO(m_lc_bspc_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_tap     &kp LC(BSPC)>
+                , <&macro_tap     &to WEN_BASE>
+                ;
+        )
+
+       ZMK_MACRO(m_lgui_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_tap     &skq LGUI>
+                , <&macro_tap     &to WEN_BASE>
+                ;
+        )
+
         ZMK_MACRO(m_e_acute_wen,
             wait-ms = <13>;
             tap-ms = <13>;
@@ -254,15 +532,6 @@
                 ;
         )
 
-        ZMK_MACRO(m_sqt_fslh_acute_wen,
-            wait-ms = <25>;
-            tap-ms = <25>;
-            bindings
-                = <&macro_tap     &sqt_fslh_wen>
-                , <&macro_tap     &to WEN_BASE>
-                ;
-        )
-        
         ZMK_MACRO(m_a_acute2_wen,
             wait-ms = <13>;
             tap-ms = <13>;
@@ -281,15 +550,6 @@
                 = <&macro_press   &kp LALT>
                 , <&macro_tap     &kp KP_N0 &kp KP_N1 &kp KP_N9 &kp KP_N3>
                 , <&macro_release &kp LALT>
-                , <&macro_tap     &to WEN_BASE>
-                ;
-        )
-
-        ZMK_MACRO(m_dqt_qmark_acute2_wen,
-            wait-ms = <25>;
-            tap-ms = <25>;
-            bindings
-                = <&macro_tap     &dqt_qmark_wen>
                 , <&macro_tap     &to WEN_BASE>
                 ;
         )
@@ -338,15 +598,6 @@
                 ;
         )
 
-        ZMK_MACRO(m_comma_dacute_wen,
-            wait-ms = <25>;
-            tap-ms = <25>;
-            bindings
-                = <&macro_tap     &kp COMMA>
-                , <&macro_tap     &to WEN_BASE>
-                ;
-        )
-
         ZMK_MACRO(m_o_diaresis_wen,
             wait-ms = <13>;
             tap-ms = <13>;
@@ -391,11 +642,110 @@
                 ;
         )
 
-        ZMK_MACRO(m_dot_diaresis_wen,
+        ZMK_MACRO(m_comma_wen,
+            wait-ms = <25>;
+            tap-ms = <25>;
+            bindings
+                = <&macro_tap     &kp COMMA>
+                , <&macro_tap     &to WEN_BASE>
+                ;
+        )
+
+        ZMK_MACRO(m_sqt_wen,
+            wait-ms = <25>;
+            tap-ms = <25>;
+            bindings
+                = <&macro_tap     &kp SQT>
+                , <&macro_tap     &to WEN_BASE>
+                ;
+        )
+
+        ZMK_MACRO(m_dqt_wen,
+            wait-ms = <25>;
+            tap-ms = <25>;
+            bindings
+                = <&macro_tap     &kp DQT>
+                , <&macro_tap     &to WEN_BASE>
+                ;
+        )
+
+        ZMK_MACRO(m_dot_wen,
             wait-ms = <25>;
             tap-ms = <25>;
             bindings
                 = <&macro_tap     &kp DOT>
+                , <&macro_tap     &to WEN_BASE>
+                ;
+        )
+        
+        ZMK_MACRO(m_excl_wen,
+            wait-ms = <25>;
+            tap-ms = <25>;
+            bindings
+                = <&macro_tap     &kp EXCL>
+                , <&macro_tap     &to WEN_BASE>
+                ;
+        )
+        
+        ZMK_MACRO(m_semi_wen,
+            wait-ms = <25>;
+            tap-ms = <25>;
+            bindings
+                = <&macro_tap     &kp SEMI>
+                , <&macro_tap     &to WEN_BASE>
+                ;
+        )
+
+        ZMK_MACRO(m_fslh_wen ,
+            wait-ms = <25>;
+            tap-ms = <25>;
+            bindings
+                = <&macro_tap     &kp FSLH>
+                , <&macro_tap     &to WEN_BASE>
+                ;
+        )
+        
+        ZMK_MACRO(m_minus_wen,
+            wait-ms = <25>;
+            tap-ms = <25>;
+            bindings
+                = <&macro_tap     &kp MINUS>
+                , <&macro_tap     &to WEN_BASE>
+                ;
+        )
+        
+        ZMK_MACRO(m_qmark_wen,
+            wait-ms = <25>;
+            tap-ms = <25>;
+            bindings
+                = <&macro_tap     &kp QMARK>
+                , <&macro_tap     &to WEN_BASE>
+                ;
+        )
+        
+        ZMK_MACRO(m_colon_wen ,
+            wait-ms = <25>;
+            tap-ms = <25>;
+            bindings
+                = <&macro_tap     &kp COLON>
+                , <&macro_tap     &to WEN_BASE>
+                ;
+        )
+        
+        ZMK_MACRO(m_gt_wen,
+            wait-ms = <25>;
+            tap-ms = <25>;
+            bindings
+                = <&macro_tap     &kp GT>
+                , <&macro_tap     &to WEN_BASE>
+                ;
+        )
+        
+        ZMK_MACRO(m_lt_wen,
+            wait-ms = <25>;
+            tap-ms = <25>;
+            bindings
+                = <&macro_tap     &kp LT>
                 , <&macro_tap     &to WEN_BASE>
                 ;
         )
@@ -408,61 +758,58 @@
         base_wen_layer {
 // COLEMAK-DH
             bindings = <
-    &to WEN_DAL  &kp W       &kp F          &kp P    &kp B           &kp J   &kp L        &kp U                 &kp Y     &kp Q
-    &kp A        &kp R       &kp S          &kp T    &kp G           &kp M   &kp N        &kp E                 &kp I     &kp O
-    &to WEN_DL   &to WEN_AL  &kp C          &kp D    &kp V           &kp K   &kp H        &to WEN_AL2           &kp X     &kp Z
-    &kp N1       &mo MEDIA   &lt NAV SPACE  &kp TAB  &kp N2          &kp N3  &skq LSHFT   &lt WEN_NUM LC(BSPC)  &mo FUNC  &kp N4
+    &to WEN_DAL  &kp W       &kp F      &kp P        &kp B           &kp J   &kp L      &kp U        &kp Y       &kp Q
+    &kp A        &kp R       &kp S      &kp T        &kp G           &kp M   &kp N      &kp E        &kp I       &kp O
+    &to WEN_DL   &to WEN_AL  &kp C      &kp D        &kp V           &kp K   &kp H      &to WEN_AL2  &kp X       &kp Z
+    &kp N1       &skq LALT   &kp SPACE  &to WEN_NAV  &kp N2          &kp N3  &skq LGUI  &skq LSHFT   &skq LCTRL  &kp N4
             >;
 
             sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
         };
 
         navigation_layer {
-/* NAV
- * Bootloader does not work on the peripherial side of the split keyboard only on the central side.
- * The reset button can be used to go into bootloader mode instead.
- */
+// WEN_NAV
             bindings = <
-    &none     &none     &none      &none      &kp KP_NUMLOCK          &kp K_AGAIN  &kp K_PASTE  &kp K_COPY  &kp K_CUT  &kp K_UNDO
-    &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &caps_word              &kp CAPS     &kp LEFT     &kp DOWN    &kp UP     &kp RIGHT
-    &none     &none     &none      &none      &kp SCROLLLOCK          &kp INS      &kp HOME     &kp PG_DN   &kp PG_UP  &kp END
-    &kp N1    &none     &none      &none      &kp N2                  &kp N3       &kp RET      &kp BSPC    &kp DEL    &kp N4
+    &kp ESC   &none         &kp K_APP    &none         &kp KP_NUMLOCK          &kp INS       &kp HOME       &kp PG_DN    &kp PG_UP     &kp END
+    &kp LGUI  &kp LALT      &kp LCTRL    &kp LSHFT     &caps_word              &kp CAPS      &kp LEFT       &kp DOWN     &kp UP        &kp RIGHT
+    &m_undo   &m_cut_wen    &m_copy_wen  &m_paste_wen  &m_again_wen            &kp LC(BSPC)  &kp BSPC       &kp RET      &kp TAB       &kp DEL
+    &kp N1    &to WEN_BASE  &kp SPACE    &none         &kp N2                  &kp N3        &to WEN_MEDIA  &to WEN_NUM  &to WEN_FUNC  &kp N4
             >;
 
             sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
         };
 
         number_layer {
-// NUM, KP_DOT would be better here instad of DOT, but num lock state interferes with KP_DOT.
+// WEN_NUM, KP_DOT would be better here instad of DOT, but num lock state interferes with KP_DOT.
             bindings = <
-    &kp LBKT   &kp N7   &kp N8  &kp N9     &kp RBKT           &none   &none      &none      &none     &none
-    &kp SEMI   &kp N4   &kp N5  &kp N6     &kp EQUAL          &none   &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI
-    &kp GRAVE  &kp N1   &kp N2  &kp N3     &kp BSLH           &none   &none      &none      &none     &none
-    &kp N1     &kp DOT  &kp N0  &kp MINUS  &kp N2             &kp N3  &none      &none      &none     &kp N4
+    &kp EQUAL  &kp N9        &kp N8  &kp N7       &kp FSLH           &none         &none       &none       &none      &kp ESC
+    &kp DOT    &kp N6        &kp N5  &kp N4       &kp MINUS          &kp COMMA     &skq LSHFT  &skq LCTRL  &skq LALT  &skq LGUI
+    &kp PLUS   &kp N3        &kp N2  &kp N1       &kp STAR           &kp LC(BSPC)  &kp BSPC    &kp RET     &kp TAB    &kp DEL 
+    &kp N1     &to WEN_BASE  &kp N0  &to WEN_NAV  &kp N2             &kp N3        &none       &none       &kp SPACE  &kp N4
             >;
 
             sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
         };
 
         function_layer {
-// FUNC
+// WEN_FUNC
             bindings = <
-    &kp F12  &kp F7   &kp F8     &kp F9     &kp PSCRN                &none   &none       &none       &none      &none
-    &kp F11  &kp F4   &kp F5     &kp F6     &kp SLCK                 &none   &skq LSHFT  &skq LCTRL  &skq LALT  &skq LGUI
-    &kp F10  &kp F1   &kp F2     &kp F3     &kp PAUSE_BREAK          &none   &none       &none       &none      &none
-    &kp N1   &kp ESC  &kp SPACE  &kp K_APP  &kp N2                   &kp N3  &none       &none       &none      &kp N4
+    &kp F12  &kp F9        &kp F8  &kp F7  &kp PSCRN                &none   &none  &none  &none  &none
+    &kp F11  &kp F6        &kp F5  &kp F4  &kp SLCK                 &none   &none  &none  &none  &none
+    &kp F10  &kp F3        &kp F2  &kp F1  &kp PAUSE_BREAK          &none   &none  &none  &none  &none
+    &kp N1   &to WEN_BASE  &none   &none   &kp N2                   &kp N3  &none  &none  &none  &kp N4
             >;
 
             sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
         };
 
         media_layer {
-// MEDIA
+// WEN_MEDIA
             bindings = <
-    &none      &none      &none       &none       &none           &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI
-    &skq LGUI  &skq LALT  &skq LCTRL  &skq LSHFT  &none           &kp EP_TOG       &kp C_PREV       &kp C_VOL_DN     &kp C_VOL_UP     &kp C_NEXT
-    &none      &none      &none       &none       &none           &out OUT_TOG     &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3
-    &kp N1     &none      &none       &none       &kp N2          &kp N3           &kp C_STOP       &kp C_PP         &kp C_MUTE       &kp N4
+    &none   &none         &none  &none  &none           &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI
+    &none   &none         &none  &none  &none           &kp EP_TOG       &kp C_PREV       &kp C_VOL_DN     &kp C_VOL_UP     &kp C_NEXT
+    &none   &none         &none  &none  &none           &out OUT_TOG     &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3
+    &kp N1  &to WEN_BASE  &none  &none  &kp N2          &kp N3           &kp C_STOP       &kp C_MUTE       &kp C_PP         &kp N4
             >;
 
             sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
@@ -471,10 +818,10 @@
         acute_wen_layer {
 // ACUTE LAYER
             bindings = <
-    &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &u_acute_wen  &to WEN_BASE           &to WEN_BASE
-    &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &e_acute_wen  &i_acute_wen           &o_acute_wen
-    &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &m_sqt_fslh_acute_wen  &to WEN_BASE
-    &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE
+    &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &u_acute_wen  &to WEN_BASE  &to WEN_BASE
+    &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &m_star_wen   &m_prcnt_wen           &m_at_wen     &m_comma_wen  &e_acute_wen  &i_acute_wen  &o_acute_wen
+    &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &m_lt_wen     &m_lbrc_wen   &m_lbkt_wen   &m_lpar_wen
+    &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE
           >;
 
             sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
@@ -483,10 +830,10 @@
         acute2_wen_layer {
 // ACUTE LAYER 2
             bindings = <
-    &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE             &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE
-    &a_acute_wen  &to WEN_BASE  &to WEN_BASE  &m_dqt_qmark_acute2_wen  &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE
-    &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE             &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE
-    &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE             &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE
+    &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE    &m_bslh_wen   &to WEN_BASE  &to WEN_BASE  &to WEN_BASE
+    &a_acute_wen  &m_sqt_wen    &m_dqt_wen    &m_dot_wen    &m_grave_wen           &m_tilde_wen    &m_plus_wen   &to WEN_BASE  &to WEN_BASE  &to WEN_BASE
+    &m_rpar_wen   &m_rbkt_wen   &m_rbrc_wen   &m_gt_wen     &to WEN_BASE           &m_lc_bspc_wen  &m_bspc_wen   &m_ret_wen    &m_tab_wen    &m_del_wen
+    &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE    &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE
           >;
 
             sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
@@ -495,8 +842,8 @@
         dacute_wen_layer {
 // DOUBLE ACUTE LAYER
             bindings = <
-    &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &u_dacute_wen  &to WEN_BASE  &m_comma_dacute_wen 
-    &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &to WEN_BASE   &to WEN_BASE  &o_dacute_wen
+    &m_esc_wen    &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &u_dacute_wen  &to WEN_BASE  &to WEN_BASE
+    &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &m_equal_wen  &m_caret_wen           &m_hash_wen   &m_excl_wen   &m_semi_wen    &m_fslh_wen   &o_dacute_wen
     &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &to WEN_BASE   &to WEN_BASE  &to WEN_BASE
     &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &to WEN_BASE   &to WEN_BASE  &to WEN_BASE
           >;
@@ -507,10 +854,10 @@
         diaresis_layer {
 // DIARESIS LAYER
             bindings = <
-    &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &u_diaresis_wen  &to WEN_BASE  &to WEN_BASE
-    &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &to WEN_BASE     &to WEN_BASE  &o_diaresis_wen
-    &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &to WEN_BASE     &to WEN_BASE  &m_dot_diaresis_wen
-    &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &to WEN_BASE     &to WEN_BASE  &to WEN_BASE
+    &to WEN_BASE    &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &u_diaresis_wen  &to WEN_BASE  &to WEN_BASE
+    &to WEN_BASE    &to WEN_BASE  &to WEN_BASE  &m_pipe_wen   &m_amps_wen            &m_dllr_wen   &m_minus_wen  &m_qmark_wen     &m_colon_wen  &o_diaresis_wen
+    &to WEN_BASE    &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &m_under_wen  &to WEN_BASE     &to WEN_BASE  &to WEN_BASE
+    &to WEN_BASE    &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &to WEN_BASE     &to WEN_BASE  &to WEN_BASE
           >;
 
             sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
@@ -518,3 +865,4 @@
 
     };
 };
+
