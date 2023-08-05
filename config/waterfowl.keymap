@@ -21,10 +21,54 @@
         label = "STICKY_KEY_QUICK_RELEASE";
         #binding-cells = <1>;
         bindings = <&kp>;
-        release-after-ms = <10000>;
+        release-after-ms = <1000>;
         quick-release;
         ignore-modifiers;
       };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+        combo_shft_right {
+            timeout-ms = <50>;
+            key-positions = <37 16>;
+            bindings = <&skq LSHFT>;
+        };
+        combo_shft_left {
+            timeout-ms = <50>;
+            key-positions = <32 13>;
+            bindings = <&skq LSHFT>;
+        };
+        combo_ctrl_right {
+            timeout-ms = <50>;
+            key-positions = <37 17>;
+            bindings = <&skq LCTRL>;
+        };
+        combo_ctrl_left {
+            timeout-ms = <50>;
+            key-positions = <32 12>;
+            bindings = <&skq LCTRL>;
+        };
+        combo_alt_right {
+            timeout-ms = <50>;
+            key-positions = <37 18>;
+            bindings = <&skq LALT>;
+        };
+        combo_alt_left {
+            timeout-ms = <50>;
+            key-positions = <32 11>;
+            bindings = <&skq LALT>;
+        };
+        combo_gui_right {
+            timeout-ms = <50>;
+            key-positions = <37 19>;
+            bindings = <&skq LGUI>;
+        };
+        combo_gui_left {
+            timeout-ms = <50>;
+            key-positions = <32 10>;
+            bindings = <&skq LGUI>;
+        };
     };
 
     keymap {
@@ -33,10 +77,10 @@
         base_wen_layer {
 // COLEMAK-DH
             bindings = <
-    &to WEN_DAL  &kp W       &kp F      &kp P        &kp B           &kp J   &kp L      &kp U        &kp Y       &kp Q
-    &kp A        &kp R       &kp S      &kp T        &kp G           &kp M   &kp N      &kp E        &kp I       &kp O
-    &to WEN_DL   &to WEN_AL  &kp C      &kp D        &kp V           &kp K   &kp H      &to WEN_AL2  &kp X       &kp Z
-    &kp N1       &skq LALT   &kp SPACE  &to WEN_NAV  &kp N2          &kp N3  &skq LGUI  &skq LSHFT   &skq LCTRL  &kp N4
+    &to WEN_DAL  &kp W       &kp F      &kp P    &kp B           &kp J   &kp L    &kp U        &kp Y    &kp Q
+    &kp A        &kp R       &kp S      &kp T    &kp G           &kp M   &kp N    &kp E        &kp I    &kp O
+    &to WEN_DL   &to WEN_AL  &kp C      &kp D    &kp V           &kp K   &kp H    &to WEN_AL2  &kp X    &kp Z
+    &kp N1       &none       &kp SPACE  &to TAB  &kp N2          &kp N3  &kp RET  &kp BSPC     &kp DEL  &kp N4
             >;
 
             sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
@@ -45,10 +89,10 @@
         navigation_layer {
 // WEN_NAV
             bindings = <
-    &kp ESC   &none         &kp K_APP    &none         &kp KP_NUMLOCK          &kp INS       &kp HOME       &kp PG_DN    &kp PG_UP     &kp END
-    &kp LGUI  &kp LALT      &kp LCTRL    &kp LSHFT     &caps_word              &kp CAPS      &kp LEFT       &kp DOWN     &kp UP        &kp RIGHT
-    &m_undo   &m_cut_wen    &m_copy_wen  &m_paste_wen  &m_again_wen            &kp LC(BSPC)  &kp BSPC       &kp RET      &kp TAB       &kp DEL
-    &kp N1    &to WEN_BASE  &kp SPACE    &none         &kp N2                  &kp N3        &to WEN_MEDIA  &to WEN_NUM  &to WEN_FUNC  &kp N4
+    &kp ESC   &none         &kp K_APP    &none         &kp KP_NUMLOCK          &kp INS       &none     &none      &none      &none
+    &kp LGUI  &kp LALT      &kp LCTRL    &kp LSHFT     &caps_word              &kp CAPS      &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT
+    &m_undo   &m_cut_wen    &m_copy_wen  &m_paste_wen  &m_again_wen            &kp LC(BSPC)  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END
+    &kp N1    &to WEN_BASE  &kp SPACE    &kp TAB       &kp N2                  &kp N3        &kp RET   &kp BSPC   &kp DEL    &kp N4
             >;
 
             sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
@@ -57,10 +101,10 @@
         number_layer {
 // WEN_NUM, KP_DOT would be better here instad of DOT, but num lock state interferes with KP_DOT.
             bindings = <
-    &kp EQUAL  &kp N9        &kp N8  &kp N7       &kp FSLH           &none         &none       &none       &none      &kp ESC
-    &kp DOT    &kp N6        &kp N5  &kp N4       &kp MINUS          &kp COMMA     &skq LSHFT  &skq LCTRL  &skq LALT  &skq LGUI
-    &kp PLUS   &kp N3        &kp N2  &kp N1       &kp STAR           &kp LC(BSPC)  &kp BSPC    &kp RET     &kp TAB    &kp DEL 
-    &kp N1     &to WEN_BASE  &kp N0  &to WEN_NAV  &kp N2             &kp N3        &none       &none       &kp SPACE  &kp N4
+    &kp EQUAL  &kp N9        &kp N8  &kp N7   &kp FSLH           &none         &none       &none       &none      &kp ESC
+    &kp DOT    &kp N6        &kp N5  &kp N4   &kp MINUS          &kp COMMA     &none       &none       &none      &none
+    &kp PLUS   &kp N3        &kp N2  &kp N1   &kp STAR           &kp LC(BSPC)  &none       &none       &none      &none
+    &kp N1     &to WEN_BASE  &kp N0  &kp TAB  &kp N2             &kp N3        &kp RET     &kp BSPC    &kp DEL    &kp N4
             >;
 
             sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
@@ -69,10 +113,10 @@
         function_layer {
 // WEN_FUNC
             bindings = <
-    &kp F12  &kp F9        &kp F8  &kp F7  &kp PSCRN                &none   &none  &none  &none  &none
-    &kp F11  &kp F6        &kp F5  &kp F4  &kp SLCK                 &none   &none  &none  &none  &none
-    &kp F10  &kp F3        &kp F2  &kp F1  &kp PAUSE_BREAK          &none   &none  &none  &none  &none
-    &kp N1   &to WEN_BASE  &none   &none   &kp N2                   &kp N3  &none  &none  &none  &kp N4
+    &kp F12  &kp F9        &kp F8     &kp F7   &kp PSCRN                &none   &none    &none     &none    &none
+    &kp F11  &kp F6        &kp F5     &kp F4   &kp SLCK                 &none   &none    &none     &none    &none
+    &kp F10  &kp F3        &kp F2     &kp F1   &kp PAUSE_BREAK          &none   &none    &none     &none    &none
+    &kp N1   &to WEN_BASE  &kp SPACE  &kp TAB  &kp N2                   &kp N3  &kp RET  &kp BSPC  &kp DEL  &kp N4
             >;
 
             sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
@@ -81,10 +125,10 @@
         media_layer {
 // WEN_MEDIA
             bindings = <
-    &none   &none         &none  &none  &none           &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI
-    &none   &none         &none  &none  &none           &kp EP_TOG       &kp C_PREV       &kp C_VOL_DN     &kp C_VOL_UP     &kp C_NEXT
-    &none   &none         &none  &none  &none           &out OUT_TOG     &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3
-    &kp N1  &to WEN_BASE  &none  &none  &kp N2          &kp N3           &kp C_STOP       &kp C_MUTE       &kp C_PP         &kp N4
+    &none   &none         &none      &none    &none           &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI
+    &none   &none         &none      &none    &none           &kp EP_TOG       &kp C_PREV       &kp C_VOL_DN     &kp C_VOL_UP     &kp C_NEXT
+    &none   &none         &none      &none    &none           &out OUT_TOG     &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3
+    &kp N1  &to WEN_BASE  &kp SPACE  &kp TAB  &kp N2          &kp N3           &kp C_STOP       &kp C_MUTE       &kp C_PP         &kp N4
             >;
 
             sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
