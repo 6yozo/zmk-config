@@ -19,12 +19,15 @@
 #define WEN_BASE  0
 #define WEN_NAV   1
 #define WEN_NUM   2
-#define WEN_FUNC  3
-#define WEN_MEDIA 4
+#define WEN_SYM   3
+#define WEN_FUNC  4
+#define WEN_MEDIA 5
 // Acute
-#define WEN_AL    5
-#define WEN_AL2   6
+#define WEN_AL    6
+#define WEN_AL2   7
 // Double acute
-#define WEN_DAL   7
+#define WEN_DAL   8
 // Diaresis
-#define WEN_DL    8
+#define WEN_DL    9
+#define WHU_BASE  0
+#define MHU_BASE  0
