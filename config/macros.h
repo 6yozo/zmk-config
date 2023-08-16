@@ -331,42 +331,6 @@
                 ;
         )
 
-        ZMK_MACRO(m_comma_wen,
-            wait-ms = <25>;
-            tap-ms = <25>;
-            bindings
-                = <&macro_tap     &kp COMMA>
-                , <&macro_tap     &to WEN_BASE>
-                ;
-        )
-
-        ZMK_MACRO(m_sqt_wen,
-            wait-ms = <25>;
-            tap-ms = <25>;
-            bindings
-                = <&macro_tap     &kp SQT>
-                , <&macro_tap     &to WEN_BASE>
-                ;
-        )
-
-        ZMK_MACRO(m_dqt_wen,
-            wait-ms = <25>;
-            tap-ms = <25>;
-            bindings
-                = <&macro_tap     &kp DQT>
-                , <&macro_tap     &to WEN_BASE>
-                ;
-        )
-
-        ZMK_MACRO(m_dot_wen,
-            wait-ms = <25>;
-            tap-ms = <25>;
-            bindings
-                = <&macro_tap     &kp DOT>
-                , <&macro_tap     &to WEN_BASE>
-                ;
-        )
-
         ZMK_MACRO(m_excl_wen,
             wait-ms = <25>;
             tap-ms = <25>;
@@ -381,15 +345,6 @@
             tap-ms = <25>;
             bindings
                 = <&macro_tap     &kp SEMI>
-                , <&macro_tap     &to WEN_BASE>
-                ;
-        )
-
-        ZMK_MACRO(m_qmark_wen,
-            wait-ms = <25>;
-            tap-ms = <25>;
-            bindings
-                = <&macro_tap     &kp QMARK>
                 , <&macro_tap     &to WEN_BASE>
                 ;
         )

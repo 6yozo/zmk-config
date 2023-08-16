@@ -24,10 +24,9 @@
 #define WEN_MEDIA 5
 // Acute
 #define WEN_AL    6
-#define WEN_AL2   7
 // Double acute
-#define WEN_DAL   8
+#define WEN_DAL   7
 // Diaresis
-#define WEN_DL    9
+#define WEN_DL    8
 #define WHU_BASE  0
 #define MHU_BASE  0
