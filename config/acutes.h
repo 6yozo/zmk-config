@@ -36,7 +36,7 @@
         compatible = "zmk,behavior-mod-morph";
         label = "E_ACUTE_WITH_SHIFT";
         #binding-cells = <0>;
-        bindings = <&m_e_acute_wen>, <&m_cap_e_acute_wen>;
+        bindings = <&m_e_acute_to_wen>, <&m_cap_e_acute_wen>;
         mods = <(MOD_RSFT|MOD_LSFT)>;
       };
 
@@ -44,7 +44,7 @@
         compatible = "zmk,behavior-mod-morph";
         label = "A_ACUTE_WITH_SHIFT";
         #binding-cells = <0>;
-        bindings = <&m_a_acute2_wen>, <&m_cap_a_acute2_wen>;
+        bindings = <&m_a_acute_wen>, <&m_cap_a_acute_wen>;
         mods = <(MOD_RSFT|MOD_LSFT)>;
       };
 

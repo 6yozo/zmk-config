@@ -21,6 +21,7 @@
 #include <dt-bindings/zmk/ext_power.h>
 
 #include "layers.h"
+#include "acute_macros.h"
 
 / {
     macros {
@@ -34,18 +35,6 @@
  // (/ 1316 60) CPS = 21 CPS
  //
  // Hitting keys close to 50 ms / keypress is humanly possible.
- //
- // Unicode Sequences
- // ---
- //
- // Emacs uses the alt-num combination as a prefix argument, so unicode
- // sequences do not work in emacs
- //
- // Num lock state interferes with Unicode Sequences. You must have a num lock
- // key to make unicode sequences work.
- //
- // Unicode Sequences do not handle shift states automatically for capital
- // letters
 
         ZMK_MACRO(m_under_wen,
             wait-ms = <13>;
@@ -124,22 +113,11 @@
                 ;
         )
 
-       ZMK_MACRO(m_lgui_wen,
+        ZMK_MACRO(m_e_acute_to_wen,
             wait-ms = <13>;
             tap-ms = <13>;
             bindings
-                = <&macro_tap     &skq LGUI>
-                , <&macro_tap     &to WEN_BASE>
-                ;
-        )
-
-        ZMK_MACRO(m_e_acute_wen,
-            wait-ms = <13>;
-            tap-ms = <13>;
-            bindings
-                = <&macro_press   &kp LALT>
-                , <&macro_tap     &kp KP_N1 &kp KP_N3 &kp KP_N0>
-                , <&macro_release &kp LALT>
+                = <&macro_tap     &m_e_acute_wen>
                 , <&macro_tap     &to WEN_BASE>
                 ;
         )
@@ -221,7 +199,7 @@
                 ;
         )
 
-        ZMK_MACRO(m_a_acute2_wen,
+        ZMK_MACRO(m_a_acute_wen,
             wait-ms = <13>;
             tap-ms = <13>;
             bindings
@@ -232,7 +210,7 @@
                 ;
         )
 
-        ZMK_MACRO(m_cap_a_acute2_wen,
+        ZMK_MACRO(m_cap_a_acute_wen,
             wait-ms = <13>;
             tap-ms = <13>;
             bindings

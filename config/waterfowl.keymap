@@ -14,6 +14,74 @@
 #include "acutes.h"
 #include "layers.h"
 
+#define TIMEOUT_MS    50
+
+// Left Side
+#define TIL  3 // Top Index finger Left
+#define TML  2
+#define HIL 13 // Home Index Left
+#define HML 12
+#define HRL 11
+#define HPL 10
+#define BIL 23 // Bottom Index Left
+#define BML 22
+#define BRL 21
+#define BPL 20
+#define OTL 32 // Outer Thumb Left
+#define ITL 31 // Inner Thumb Left
+
+// Right Side
+#define TIR  6 // Top Index finger Right
+#define TMR  7
+#define HIR 16 // Home Index Right
+#define HMR 17
+#define HRR 18
+#define HPR 19
+#define BIR 26 // Bottom Index Right
+#define BMR 27
+#define BRR 28
+#define BPR 29
+#define OTR 37 // Outer Thumb Right
+#define ITR 38 // Inner Thumb Right
+
+#define TAIPO_WEN_COMBO(NAME, BINDINGS, OUTER_BINDINGS, INNER_BINDINGS, LEFT_KEYPOS, RIGHT_KEYPOS) \
+combo_l_##NAME { \
+	timeout-ms = <TIMEOUT_MS>; \
+	bindings = <BINDINGS>; \
+	key-positions = <LEFT_KEYPOS>; \
+	layers = <WEN_TAIPO>; \
+}; \
+combo_li_##NAME { \
+	timeout-ms = <TIMEOUT_MS>; \
+	bindings = <INNER_BINDINGS>; \
+	key-positions = <LEFT_KEYPOS ITL>; \
+	layers = <WEN_TAIPO>; \
+}; \
+combo_lo_##NAME { \
+	timeout-ms = <TIMEOUT_MS>; \
+	bindings = <OUTER_BINDINGS>; \
+	key-positions = <LEFT_KEYPOS OTL>; \
+	layers = <WEN_TAIPO>; \
+}; \
+combo_r_##NAME { \
+	timeout-ms = <TIMEOUT_MS>; \
+	bindings = <BINDINGS>; \
+	key-positions = <RIGHT_KEYPOS>; \
+	layers = <WEN_TAIPO>; \
+}; \
+combo_ri_##NAME { \
+	timeout-ms = <TIMEOUT_MS>; \
+	bindings = <INNER_BINDINGS>; \
+	key-positions = <RIGHT_KEYPOS ITR>; \
+	layers = <WEN_TAIPO>; \
+}; \
+combo_ro_##NAME { \
+	timeout-ms = <TIMEOUT_MS>; \
+	bindings = <OUTER_BINDINGS>; \
+	key-positions = <RIGHT_KEYPOS OTR>; \
+	layers = <WEN_TAIPO>; \
+};
+
 / {
     behaviors {
       skq: sticky_key_quick_release {
@@ -29,138 +97,249 @@
 
     combos {
         compatible = "zmk,combos";
+
+        combo_l_space { \
+        	timeout-ms = <TIMEOUT_MS>; \
+        	bindings = <&kp SPACE>; \
+        	key-positions = <OTL>; \
+        	layers = <WEN_TAIPO>; \
+        };
+        
+        combo_r_space { \
+        	timeout-ms = <TIMEOUT_MS>; \
+        	bindings = <&kp SPACE>; \
+        	key-positions = <OTR>; \
+        	layers = <WEN_TAIPO>; \
+        };
+        
+        combo_l_bspc { \
+        	timeout-ms = <TIMEOUT_MS>; \
+        	bindings = <&kp BSPC>; \
+        	key-positions = <ITL>; \
+        	layers = <WEN_TAIPO>; \
+        };
+        
+        combo_r_bspc { \
+        	timeout-ms = <TIMEOUT_MS>; \
+        	bindings = <&kp BSPC>; \
+        	key-positions = <ITR>; \
+        	layers = <WEN_TAIPO>; \
+        };
+
+        TAIPO_WEN_COMBO(R, &kp R, &kp GT,   &kp LS(R), HPL, HPR)
+        TAIPO_WEN_COMBO(S, &kp S, &kp RBRC, &kp LS(S), HRL, HRR)
+        TAIPO_WEN_COMBO(N, &kp N, &kp RBKT, &kp LS(N), HML, HMR)
+        TAIPO_WEN_COMBO(I, &kp I, &kp RPAR, &kp LS(I), HIL, HIR)
+        TAIPO_WEN_COMBO(A, &kp A, &kp LT,   &kp LS(A), BPL, BPR)
+        TAIPO_WEN_COMBO(O, &kp O, &kp LBRC, &kp LS(O), BRL, BRR)
+        TAIPO_WEN_COMBO(T, &kp T, &kp LBKT, &kp LS(T), BML, BMR)
+        TAIPO_WEN_COMBO(E, &kp E, &kp LPAR, &kp LS(E), BIL, BIR)
+        
+        TAIPO_WEN_COMBO(B,     &kp B,     &kp N9,     &kp LS(B), HPL HRL, HPR HRR)
+        TAIPO_WEN_COMBO(Y,     &kp Y,     &kp N5,     &kp LS(Y), HML HIL, HMR HIR)
+        TAIPO_WEN_COMBO(L,     &kp L,     &kp N4,     &kp LS(L), BPL BRL, BPR BRR)
+        TAIPO_WEN_COMBO(H,     &kp H,     &kp N0,     &kp LS(H), BML BIL, BMR BIR)
+        TAIPO_WEN_COMBO(P,     &kp P,     &kp N7,     &kp LS(P), HRL HML, HRR HMR)
+        TAIPO_WEN_COMBO(U,     &kp U,     &kp N2,     &kp LS(U), BRL BML, BRR BMR)
+        TAIPO_WEN_COMBO(G,     &kp G,     &kp HASH,   &kp LS(G), HPL HIL, HPR HIR)
+        TAIPO_WEN_COMBO(D,     &kp D,     &kp AT,     &kp LS(D), BPL BIL, BPR BIR)
+        TAIPO_WEN_COMBO(Z,     &kp Z,     &kp N8,     &kp LS(Z), HPL HML, HPR HMR)
+        TAIPO_WEN_COMBO(F,     &kp F,     &kp N6,     &kp LS(F), HRL HIL, HRR HIR)
+        TAIPO_WEN_COMBO(Q,     &kp Q,     &kp N3,     &kp LS(Q), BPL BML, BPR BMR)        
+        TAIPO_WEN_COMBO(C,     &kp C,     &kp N1,     &kp LS(C), BRL BIL, BRR BIR)
+        TAIPO_WEN_COMBO(X,     &kp X,     &kp CARET,  &kp LS(X), HPL BML, HPR BMR)
+        TAIPO_WEN_COMBO(K,     &kp K,     &kp PLUS,   &kp LS(K), HIL BRL, HIR BRR)
+        TAIPO_WEN_COMBO(V,     &kp V,     &kp STAR,   &kp LS(V), HRL BIL, HRR BIR)
+        TAIPO_WEN_COMBO(J,     &kp J,     &kp EQUAL,  &kp LS(J), HML BPL, HMR BPR)
+        TAIPO_WEN_COMBO(M,     &kp M,     &kp DOLLAR, &kp LS(M), HPL BIL, HPR BIR)
+        TAIPO_WEN_COMBO(W,     &kp W,     &kp AMPS,   &kp LS(W), HIL BPL, HIR BPR)
+        TAIPO_WEN_COMBO(SLASH, &kp SLASH, &kp PIPE,   &kp BSLH,  HRL BML, HRR BMR)
+        TAIPO_WEN_COMBO(MINUS, &kp MINUS, &kp PRCNT,  &kp UNDER, HML BRL, HMR BRR)
+        TAIPO_WEN_COMBO(SEMI,  &kp SEMI,  &none,      &kp COLON, HPL BRL, HPR BRR)        
+        TAIPO_WEN_COMBO(QMARK, &kp QMARK, &none,      &kp EXCL,  HIL BML, HIR BMR)
+        TAIPO_WEN_COMBO(COMMA, &kp COMMA, &kp TILDE,  &kp DOT,   HML BIL, HMR BIR)
+        TAIPO_WEN_COMBO(SQT,   &kp SQT,   &kp GRAVE,  &kp DQT,   HRL BPL, HRR BPR)
+        
+        TAIPO_WEN_COMBO(LGUI,   &sk LGUI,   &kp PGUP, &kp RIGHT, HPL BPL, HPR BPR)
+        TAIPO_WEN_COMBO(LALT,   &sk LALT,   &kp HOME, &kp UP,    HRL BRL, HRR BRR)
+        TAIPO_WEN_COMBO(LSHIFT, &sk LSHIFT, &kp PGDN, &kp LEFT,  HIL BIL, HIR BIR)
+        TAIPO_WEN_COMBO(LCTRL,  &sk LCTRL,  &kp END,  &kp DOWN,  HML BML, HMR BMR)
+
+        TAIPO_WEN_COMBO(TAB,   &kp TAB,   &kp INS,  &kp DEL, HRL HML HIL, HRR HMR HIR)
+        TAIPO_WEN_COMBO(ENTER, &kp ENTER, &kp LALT, &kp ESC, BRL BML BIL, BRR BMR BIR)
+        
+        TAIPO_WEN_COMBO(TO_WEN, &to WEN_BASE, &none, &none, HPL HRL HML, HPR HRR HMR)
+        
         combo_shft_right {
-            timeout-ms = <50>;
+            timeout-ms = <TIMEOUT_MS>;
             key-positions = <37 16>;
             bindings = <&skq LSHFT>;
+            layers = <WEN_LAYER_SET>;
         };
         combo_shft_left {
-            timeout-ms = <50>;
+            timeout-ms = <TIMEOUT_MS>;
             key-positions = <32 13>;
             bindings = <&skq LSHFT>;
+            layers = <WEN_LAYER_SET>;
         };
         combo_ctrl_right {
-            timeout-ms = <50>;
+            timeout-ms = <TIMEOUT_MS>;
             key-positions = <37 17>;
             bindings = <&skq LCTRL>;
+            layers = <WEN_LAYER_SET>;
         };
         combo_ctrl_left {
-            timeout-ms = <50>;
+            timeout-ms = <TIMEOUT_MS>;
             key-positions = <32 12>;
             bindings = <&skq LCTRL>;
+            layers = <WEN_LAYER_SET>;
         };
         combo_alt_right {
-            timeout-ms = <50>;
+            timeout-ms = <TIMEOUT_MS>;
             key-positions = <37 18>;
             bindings = <&skq LALT>;
+            layers = <WEN_LAYER_SET>;
         };
         combo_alt_left {
-            timeout-ms = <50>;
+            timeout-ms = <TIMEOUT_MS>;
             key-positions = <32 11>;
             bindings = <&skq LALT>;
+            layers = <WEN_LAYER_SET>;
         };
         combo_gui_right {
-            timeout-ms = <50>;
+            timeout-ms = <TIMEOUT_MS>;
             key-positions = <37 19>;
             bindings = <&skq LGUI>;
+            layers = <WEN_LAYER_SET>;
         };
         combo_gui_left {
-            timeout-ms = <50>;
+            timeout-ms = <TIMEOUT_MS>;
             key-positions = <32 10>;
             bindings = <&skq LGUI>;
+            layers = <WEN_LAYER_SET>;
         };
 
         combo_to_wen_base_left {
-            timeout-ms = <50>;
+            timeout-ms = <TIMEOUT_MS>;
             key-positions = <31 13>;
             bindings = <&to WEN_BASE>;
+            layers = <WEN_LAYER_SET>;
         };
         combo_to_wen_base_right {
-            timeout-ms = <50>;
+            timeout-ms = <TIMEOUT_MS>;
             key-positions = <38 16>;
             bindings = <&to WEN_BASE>;
+            layers = <WEN_LAYER_SET>;
         };
         combo_to_wen_nav_left {
-            timeout-ms = <50>;
+            timeout-ms = <TIMEOUT_MS>;
             key-positions = <31 12>;
             bindings = <&to WEN_NAV>;
+            layers = <WEN_LAYER_SET>;
         };
         combo_to_wen_nav_right {
-            timeout-ms = <50>;
+            timeout-ms = <TIMEOUT_MS>;
             key-positions = <38 17>;
             bindings = <&to WEN_NAV>;
+            layers = <WEN_LAYER_SET>;
         };
         combo_to_wen_num_left {
-            timeout-ms = <50>;
+            timeout-ms = <TIMEOUT_MS>;
             key-positions = <31 11>;
             bindings = <&to WEN_NUM>;
+            layers = <WEN_LAYER_SET>;
         };
         combo_to_wen_num_right {
-            timeout-ms = <50>;
+            timeout-ms = <TIMEOUT_MS>;
             key-positions = <38 18>;
             bindings = <&to WEN_NUM>;
+            layers = <WEN_LAYER_SET>;
         };
         combo_to_wen_sym_left {
-            timeout-ms = <50>;
+            timeout-ms = <TIMEOUT_MS>;
             key-positions = <31 10>;
             bindings = <&to WEN_SYM>;
+            layers = <WEN_LAYER_SET>;
         };
         combo_to_wen_sym_right {
-            timeout-ms = <50>;
+            timeout-ms = <TIMEOUT_MS>;
             key-positions = <38 19>;
             bindings = <&to WEN_SYM>;
+            layers = <WEN_LAYER_SET>;
         };
 
         combo_to_wen_diaresis_left {
-            timeout-ms = <50>;
+            timeout-ms = <TIMEOUT_MS>;
             key-positions = <31 23>;
             bindings = <&to WEN_DL>;
+            layers = <WEN_LAYER_SET>;
         };
         combo_to_wen_diaresis_right {
-            timeout-ms = <50>;
+            timeout-ms = <TIMEOUT_MS>;
             key-positions = <38 26>;
             bindings = <&to WEN_DL>;
+            layers = <WEN_LAYER_SET>;
         };
         combo_to_wen_acute_left {
-            timeout-ms = <50>;
+            timeout-ms = <TIMEOUT_MS>;
             key-positions = <31 22>;
             bindings = <&to WEN_AL>;
+            layers = <WEN_LAYER_SET>;
         };
         combo_to_wen_acute_right {
-            timeout-ms = <50>;
+            timeout-ms = <TIMEOUT_MS>;
             key-positions = <38 27>;
             bindings = <&to WEN_AL>;
+            layers = <WEN_LAYER_SET>;
         };
         combo_to_wen_dacute_left {
-            timeout-ms = <50>;
+            timeout-ms = <TIMEOUT_MS>;
             key-positions = <31 21>;
             bindings = <&to WEN_DAL>;
+            layers = <WEN_LAYER_SET>;
         };
         combo_to_wen_dacute_right {
-            timeout-ms = <50>;
+            timeout-ms = <TIMEOUT_MS>;
             key-positions = <38 28>;
             bindings = <&to WEN_DAL>;
+            layers = <WEN_LAYER_SET>;
         };
         combo_to_wen_func_left {
-            timeout-ms = <50>;
+            timeout-ms = <TIMEOUT_MS>;
             key-positions = <31 20>;
             bindings = <&to WEN_FUNC>;
+            layers = <WEN_LAYER_SET>;
         };
         combo_to_wen_func_right {
-            timeout-ms = <50>;
+            timeout-ms = <TIMEOUT_MS>;
             key-positions = <38 29>;
             bindings = <&to WEN_FUNC>;
+            layers = <WEN_LAYER_SET>;
+        };
+        combo_to_wen_taipo_left {
+            timeout-ms = <TIMEOUT_MS>;
+            key-positions = <31 02>;
+            bindings = <&to WEN_TAIPO>;
+            layers = <WEN_LAYER_SET>;
+        };
+        combo_to_wen_taipo_right {
+            timeout-ms = <TIMEOUT_MS>;
+            key-positions = <38 07>;
+            bindings = <&to WEN_TAIPO>;
+            layers = <WEN_LAYER_SET>;
         };
         
         combo_to_whu_base {
-            timeout-ms = <50>;
+            timeout-ms = <TIMEOUT_MS>;
             key-positions = <37 29>;
             bindings = <&to WHU_BASE>;
+            layers = <WEN_LAYER_SET>;
         };
         combo_to_mhu_base {
-            timeout-ms = <50>;
+            timeout-ms = <TIMEOUT_MS>;
             key-positions = <32 20>;
             bindings = <&to MHU_BASE>;
+            layers = <WEN_LAYER_SET>;
         };
     };
 
@@ -262,6 +441,20 @@
 
             sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
         };
+
+        taipo_layer {
+// TAIPO LAYER
+            bindings = <
+    &none    &none  &none  &none  &none           &none  &none  &none  &none  &none
+    &none    &none  &none  &none  &none           &none  &none  &none  &none  &none
+    &none    &none  &none  &none  &none           &none  &none  &none  &none  &none
+    &none    &none  &none  &none  &none           &none  &none  &none  &none  &none
+          >;
+
+            sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
+        };
+
+
 
     };
 };

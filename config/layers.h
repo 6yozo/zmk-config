@@ -27,5 +27,9 @@
 #define WEN_DAL   6
 // Diaresis
 #define WEN_DL    7
+#define WEN_TAIPO 8
+
 #define WHU_BASE  0
 #define MHU_BASE  0
+
+#define WEN_LAYER_SET WEN_BASE WEN_NAV WEN_NUM WEN_SYM WEN_FUNC WEN_AL WEN_DAL WEN_DL
