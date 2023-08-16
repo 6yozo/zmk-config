@@ -70,67 +70,88 @@
             bindings = <&skq LGUI>;
         };
 
-       combo_to_wen_diaresis_right {
-            timeout-ms = <50>;
-            key-positions = <38 16>;
-            bindings = <&to WEN_DL>;
-        };
-        combo_to_wen_diaresis_left {
+        combo_to_wen_base_left {
             timeout-ms = <50>;
             key-positions = <31 13>;
-            bindings = <&to WEN_DL>;
+            bindings = <&to WEN_BASE>;
         };
-        combo_to_wen_acute_right {
+        combo_to_wen_base_right {
+            timeout-ms = <50>;
+            key-positions = <38 16>;
+            bindings = <&to WEN_BASE>;
+        };
+        combo_to_wen_nav_left {
+            timeout-ms = <50>;
+            key-positions = <31 12>;
+            bindings = <&to WEN_NAV>;
+        };
+        combo_to_wen_nav_right {
             timeout-ms = <50>;
             key-positions = <38 17>;
-            bindings = <&to WEN_AL>;
+            bindings = <&to WEN_NAV>;
+        };
+        combo_to_wen_num_left {
+            timeout-ms = <50>;
+            key-positions = <31 11>;
+            bindings = <&to WEN_NUM>;
+        };
+        combo_to_wen_num_right {
+            timeout-ms = <50>;
+            key-positions = <38 18>;
+            bindings = <&to WEN_NUM>;
+        };
+        combo_to_wen_sym_left {
+            timeout-ms = <50>;
+            key-positions = <31 10>;
+            bindings = <&to WEN_SYM>;
+        };
+        combo_to_wen_sym_right {
+            timeout-ms = <50>;
+            key-positions = <38 19>;
+            bindings = <&to WEN_SYM>;
+        };
+
+        combo_to_wen_diaresis_left {
+            timeout-ms = <50>;
+            key-positions = <31 23>;
+            bindings = <&to WEN_DL>;
+        };
+        combo_to_wen_diaresis_right {
+            timeout-ms = <50>;
+            key-positions = <38 26>;
+            bindings = <&to WEN_DL>;
         };
         combo_to_wen_acute_left {
             timeout-ms = <50>;
-            key-positions = <31 12>;
+            key-positions = <31 22>;
             bindings = <&to WEN_AL>;
         };
-        combo_to_wen_dacute_right {
+        combo_to_wen_acute_right {
             timeout-ms = <50>;
-            key-positions = <38 18>;
-            bindings = <&to WEN_DAL>;
+            key-positions = <38 27>;
+            bindings = <&to WEN_AL>;
         };
         combo_to_wen_dacute_left {
             timeout-ms = <50>;
-            key-positions = <31 11>;
+            key-positions = <31 21>;
             bindings = <&to WEN_DAL>;
         };
-
-        combo_to_wen_base {
+        combo_to_wen_dacute_right {
             timeout-ms = <50>;
-            key-positions = <37 26>;
-            bindings = <&to WEN_BASE>;
+            key-positions = <38 28>;
+            bindings = <&to WEN_DAL>;
         };
-        combo_to_wen_nav {
+        combo_to_wen_func_left {
             timeout-ms = <50>;
-            key-positions = <32 23>;
-            bindings = <&to WEN_NAV>;
-        };
-        combo_to_wen_num {
-            timeout-ms = <50>;
-            key-positions = <37 27>;
-            bindings = <&to WEN_NUM>;
-        };
-        combo_to_wen_sym {
-            timeout-ms = <50>;
-            key-positions = <32 22>;
-            bindings = <&to WEN_SYM>;
-        };
-        combo_to_wen_func {
-            timeout-ms = <50>;
-            key-positions = <37 28>;
+            key-positions = <31 20>;
             bindings = <&to WEN_FUNC>;
         };
-        combo_to_wen_media {
+        combo_to_wen_func_right {
             timeout-ms = <50>;
-            key-positions = <32 21>;
-            bindings = <&to WEN_MEDIA>;
+            key-positions = <38 29>;
+            bindings = <&to WEN_FUNC>;
         };
+        
         combo_to_whu_base {
             timeout-ms = <50>;
             key-positions = <37 29>;
@@ -194,25 +215,13 @@
             sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
         };
 
-        wen_fun_layer {
+        wen_func_layer {
 // WEN_FUNC
             bindings = <
-    &kp F12  &kp F9   &kp F8     &kp F7   &kp PSCRN                &none   &none    &none     &none    &none
-    &kp F11  &kp F6   &kp F5     &kp F4   &kp SLCK                 &none   &none    &none     &none    &none
-    &kp F10  &kp F3   &kp F2     &kp F1   &kp PAUSE_BREAK          &none   &none    &none     &none    &none
-    &kp N1   &kp ESC  &kp SPACE  &kp TAB  &kp N2                   &kp N3  &kp RET  &kp BSPC  &kp DEL  &kp N4
-            >;
-
-            sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
-        };
-
-        wen_media_layer {
-// WEN_MEDIA
-            bindings = <
-    &none   &none    &none      &none    &none           &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI
-    &none   &none    &none      &none    &none           &kp EP_TOG       &kp C_PREV       &kp C_VOL_DN     &kp C_VOL_UP     &kp C_NEXT
-    &none   &none    &none      &none    &none           &out OUT_TOG     &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3
-    &kp N1  &kp ESC  &kp SPACE  &kp TAB  &kp N2          &kp N3           &kp C_STOP       &kp C_MUTE       &kp C_PP         &kp N4
+    &kp F12  &kp F9   &kp F8     &kp F7   &kp PSCRN                &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI
+    &kp F11  &kp F6   &kp F5     &kp F4   &kp SLCK                 &kp EP_TOG       &kp C_PREV       &kp C_VOL_DN     &kp C_VOL_UP     &kp C_NEXT
+    &kp F10  &kp F3   &kp F2     &kp F1   &kp PAUSE_BREAK          &out OUT_TOG     &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3
+    &kp N1   &kp ESC  &kp SPACE  &kp TAB  &kp N2                   &kp N3           &kp RET          &kp BSPC         &kp DEL          &kp N4
             >;
 
             sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
