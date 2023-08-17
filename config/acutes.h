@@ -24,75 +24,75 @@
 
 / {
     behaviors {
-      o_acute_wen: o_acute_wen_with_shift {
+      o_acute_to_wen: o_acute_wen_with_shift {
         compatible = "zmk,behavior-mod-morph";
         label = "O_ACUTE_WITH_SHIFT";
         #binding-cells = <0>;
-        bindings = <&m_o_acute_wen>, <&m_cap_o_acute_wen>;
+        bindings = <&m_o_acute_to_wen>, <&m_cap_o_acute_to_wen>;
         mods = <(MOD_RSFT|MOD_LSFT)>;
       };
 
-      e_acute_wen: e_acute_wen_with_shift {
+      e_acute_to_wen: e_acute_wen_with_shift {
         compatible = "zmk,behavior-mod-morph";
         label = "E_ACUTE_WITH_SHIFT";
         #binding-cells = <0>;
-        bindings = <&m_e_acute_to_wen>, <&m_cap_e_acute_wen>;
+        bindings = <&m_e_acute_to_wen>, <&m_cap_e_acute_to_wen>;
         mods = <(MOD_RSFT|MOD_LSFT)>;
       };
 
-      a_acute_wen: a_acute_wen_with_shift {
+      a_acute_to_wen: a_acute_wen_with_shift {
         compatible = "zmk,behavior-mod-morph";
         label = "A_ACUTE_WITH_SHIFT";
         #binding-cells = <0>;
-        bindings = <&m_a_acute_wen>, <&m_cap_a_acute_wen>;
+        bindings = <&m_a_acute_to_wen>, <&m_cap_a_acute_to_wen>;
         mods = <(MOD_RSFT|MOD_LSFT)>;
       };
 
-      u_acute_wen: u_acute_wen_with_shift {
+      u_acute_to_wen: u_acute_wen_with_shift {
         compatible = "zmk,behavior-mod-morph";
         label = "U_ACUTE_WITH_SHIFT";
         #binding-cells = <0>;
-        bindings = <&m_u_acute_wen>, <&m_cap_u_acute_wen>;
+        bindings = <&m_u_acute_to_wen>, <&m_cap_u_acute_to_wen>;
         mods = <(MOD_RSFT|MOD_LSFT)>;
       };
 
-      i_acute_wen: i_acute_wen_with_shift {
+      i_acute_to_wen: i_acute_wen_with_shift {
         compatible = "zmk,behavior-mod-morph";
         label = "I_ACUTE_WITH_SHIFT";
         #binding-cells = <0>;
-        bindings = <&m_i_acute_wen>, <&m_cap_i_acute_wen>;
+        bindings = <&m_i_acute_to_wen>, <&m_cap_i_acute_to_wen>;
         mods = <(MOD_RSFT|MOD_LSFT)>;
       };
 
-      o_dacute_wen: o_dacute_wen_with_shift {
+      o_dacute_to_wen: o_dacute_wen_with_shift {
         compatible = "zmk,behavior-mod-morph";
         label = "O_DACUTE_WITH_SHIFT";
         #binding-cells = <0>;
-        bindings = <&m_o_dacute_wen>, <&m_cap_o_dacute_wen>;
+        bindings = <&m_o_dacute_to_wen>, <&m_cap_o_dacute_to_wen>;
         mods = <(MOD_RSFT|MOD_LSFT)>;
       };
 
-      u_dacute_wen: u_dacute_wen_with_shift {
+      u_dacute_to_wen: u_dacute_wen_with_shift {
         compatible = "zmk,behavior-mod-morph";
         label = "U_DACUTE_WITH_SHIFT";
         #binding-cells = <0>;
-        bindings = <&m_u_dacute_wen>, <&m_cap_u_dacute_wen>;
+        bindings = <&m_u_dacute_to_wen>, <&m_cap_u_dacute_to_wen>;
         mods = <(MOD_RSFT|MOD_LSFT)>;
       };
 
-      o_diaresis_wen: o_diaresis_wen_with_shift {
+      o_diaresis_to_wen: o_diaresis_wen_with_shift {
         compatible = "zmk,behavior-mod-morph";
         label = "O_DIARESIS_WITH_SHIFT";
         #binding-cells = <0>;
-        bindings = <&m_o_diaresis_wen>, <&m_cap_o_diaresis_wen>;
+        bindings = <&m_o_diaresis_to_wen>, <&m_cap_o_diaresis_to_wen>;
         mods = <(MOD_RSFT|MOD_LSFT)>;
       };
 
-      u_diaresis_wen: u_diaresis_wen_with_shift {
+      u_diaresis_to_wen: u_diaresis_wen_with_shift {
         compatible = "zmk,behavior-mod-morph";
         label = "U_DIARESIS_WITH_SHIFT";
         #binding-cells = <0>;
-        bindings = <&m_u_diaresis_wen>, <&m_cap_u_diaresis_wen>;
+        bindings = <&m_u_diaresis_to_wen>, <&m_cap_u_diaresis_to_wen>;
         mods = <(MOD_RSFT|MOD_LSFT)>;
       };
 

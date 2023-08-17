@@ -409,10 +409,10 @@ combo_ro_##NAME { \
         wen_acute_layer {
 // ACUTE LAYER
             bindings = <
-    &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &u_acute_wen  &to WEN_BASE  &to WEN_BASE
-    &a_acute_wen  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &e_acute_wen  &i_acute_wen  &o_acute_wen
-    &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE
-    &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE
+    &to WEN_BASE     &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &u_acute_to_wen  &to WEN_BASE     &to WEN_BASE
+    &a_acute_to_wen  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &e_acute_to_wen  &i_acute_to_wen  &o_acute_to_wen
+    &to WEN_BASE     &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &to WEN_BASE     &to WEN_BASE     &to WEN_BASE
+    &to WEN_BASE     &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &to WEN_BASE     &to WEN_BASE     &to WEN_BASE
           >;
 
             sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
@@ -421,10 +421,10 @@ combo_ro_##NAME { \
         dacute_wen_layer {
 // DOUBLE ACUTE LAYER
             bindings = <
-    &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &u_dacute_wen  &to WEN_BASE  &to WEN_BASE
-    &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &m_excl_wen   &m_semi_wen    &m_at_wen     &o_dacute_wen
-    &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &to WEN_BASE   &to WEN_BASE  &to WEN_BASE
-    &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &to WEN_BASE   &to WEN_BASE  &to WEN_BASE
+    &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &u_dacute_to_wen  &to WEN_BASE  &to WEN_BASE
+    &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &m_excl_wen   &m_semi_wen       &m_at_wen     &o_dacute_to_wen
+    &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &to WEN_BASE      &to WEN_BASE  &to WEN_BASE
+    &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &to WEN_BASE      &to WEN_BASE  &to WEN_BASE
           >;
 
             sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
@@ -433,10 +433,10 @@ combo_ro_##NAME { \
         diaresis_layer {
 // DIARESIS LAYER
             bindings = <
-    &to WEN_BASE    &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &u_diaresis_wen  &to WEN_BASE  &to WEN_BASE
-    &to WEN_BASE    &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &m_under_wen  &to WEN_BASE     &m_grave_wen  &o_diaresis_wen
-    &to WEN_BASE    &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &to WEN_BASE     &to WEN_BASE  &to WEN_BASE
-    &to WEN_BASE    &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &to WEN_BASE     &to WEN_BASE  &to WEN_BASE
+    &to WEN_BASE    &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &u_diaresis_to_wen  &to WEN_BASE  &to WEN_BASE
+    &to WEN_BASE    &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &m_under_wen  &to WEN_BASE        &m_grave_wen  &o_diaresis_to_wen
+    &to WEN_BASE    &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &to WEN_BASE        &to WEN_BASE  &to WEN_BASE
+    &to WEN_BASE    &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &to WEN_BASE        &to WEN_BASE  &to WEN_BASE
           >;
 
             sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;

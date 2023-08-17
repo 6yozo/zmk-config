@@ -30,191 +30,189 @@
 / {
     macros {
 
-ZMK_MACRO(m_e_acute_wen,
-    wait-ms = <13>;
-    tap-ms = <13>;
-    bindings
-          = <&macro_press   &kp LALT>
-          , <&macro_tap     &kp KP_PLUS &kp KP_N0 &kp KP_N0 &kp E &kp KP_N9>
-          , <&macro_release &kp LALT>
-          ;
-)
+       ZMK_MACRO(m_e_acute_wen,
+           wait-ms = <13>;
+           tap-ms = <13>;
+           bindings
+                 = <&macro_press   &kp LALT>
+                 , <&macro_tap     &kp KP_PLUS &kp E &kp KP_N9>
+                 , <&macro_release &kp LALT>
+                 ;
+        )
 
-/*
-ZMK_MACRO(m_cap_e_acute_wen,
-    wait-ms = <13>;
-    tap-ms = <13>;
-    bindings
-        = <&macro_press   &kp LALT>
-        , <&macro_tap     &kp KP_N1 &kp KP_N4 &kp KP_N4>
-        , <&macro_release &kp LALT>
-        ;
-)
+        ZMK_MACRO(m_cap_e_acute_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_press   &kp LALT>
+                , <&macro_tap     &kp KP_PLUS &kp C &kp KP_N9>
+                , <&macro_release &kp LALT>
+                ;
+        )
 
-ZMK_MACRO(m_o_acute_wen,
-    wait-ms = <13>;
-    tap-ms = <13>;
-    bindings
-        = <&macro_press   &kp LALT>
-        , <&macro_tap     &kp KP_N1 &kp KP_N6 &kp KP_N2>
-        , <&macro_release &kp LALT>
-        ;
-)
+        ZMK_MACRO(m_o_acute_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_press   &kp LALT>
+                , <&macro_tap     &kp KP_PLUS &kp F &kp KP_N3>
+                , <&macro_release &kp LALT>
+                ;
+        )
 
-ZMK_MACRO(m_cap_o_acute_wen,
-    wait-ms = <13>;
-    tap-ms = <13>;
-    bindings
-        = <&macro_press   &kp LALT>
-        , <&macro_tap     &kp KP_N0 &kp KP_N2 &kp KP_N1 &kp KP_N1>
-        , <&macro_release &kp LALT>
-        ;
-)
+        ZMK_MACRO(m_cap_o_acute_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_press   &kp LALT>
+                , <&macro_tap     &kp KP_PLUS &kp D &kp KP_N3>
+                , <&macro_release &kp LALT>
+                ;
+        )
 
-ZMK_MACRO(m_i_acute_wen,
-    wait-ms = <13>;
-    tap-ms = <13>;
-    bindings
-        = <&macro_press   &kp LALT>
-        , <&macro_tap     &kp KP_N1 &kp KP_N6 &kp KP_N1>
-        , <&macro_release &kp LALT>
-        ;
-)
+        ZMK_MACRO(m_i_acute_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_press   &kp LALT>
+                , <&macro_tap     &kp KP_PLUS &kp E &kp D>
+                , <&macro_release &kp LALT>
+                ;
+        )
 
-ZMK_MACRO(m_cap_i_acute_wen,
-    wait-ms = <13>;
-    tap-ms = <13>;
-    bindings
-        = <&macro_press   &kp LALT>
-        , <&macro_tap     &kp KP_N0 &kp KP_N2 &kp KP_N0 &kp KP_N5>
-        , <&macro_release &kp LALT>
-        ;
-)
+        ZMK_MACRO(m_cap_i_acute_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_press   &kp LALT>
+                , <&macro_tap     &kp KP_PLUS &kp C &kp D>
+                , <&macro_release &kp LALT>
+                ;
+        )
 
-ZMK_MACRO(m_u_acute_wen,
-    wait-ms = <13>;
-    tap-ms = <13>;
-    bindings
-        = <&macro_press   &kp LALT>
-        , <&macro_tap     &kp KP_N1 &kp KP_N6 &kp KP_N3>
-        , <&macro_release &kp LALT>
-        ;
-)
+        ZMK_MACRO(m_u_acute_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_press   &kp LALT>
+                , <&macro_tap     &kp KP_PLUS &kp F &kp A>
+                , <&macro_release &kp LALT>
+                ;
+        )
 
-ZMK_MACRO(m_cap_u_acute_wen,
-    wait-ms = <13>;
-    tap-ms = <13>;
-    bindings
-        = <&macro_press   &kp LALT>
-        , <&macro_tap     &kp KP_N0 &kp KP_N2 &kp KP_N1 &kp KP_N8>
-        , <&macro_release &kp LALT>
-        , <&macro_tap     &to WEN_BASE>
-        ;
-)
+        ZMK_MACRO(m_cap_u_acute_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_press   &kp LALT>
+                , <&macro_tap     &kp KP_PLUS &kp D &kp A>
+                , <&macro_release &kp LALT>
+                , <&macro_tap     &to WEN_BASE>
+                ;
+        )
 
-ZMK_MACRO(m_a_acute_wen,
-    wait-ms = <13>;
-    tap-ms = <13>;
-    bindings
-        = <&macro_press   &kp LALT>
-        , <&macro_tap     &kp KP_N1 &kp KP_N6 &kp KP_N0>
-        , <&macro_release &kp LALT>
-        ;
-)
+        ZMK_MACRO(m_a_acute_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_press   &kp LALT>
+                , <&macro_tap     &kp KP_PLUS &kp E &kp KP_N1>
+                , <&macro_release &kp LALT>
+                ;
+        )
 
-ZMK_MACRO(m_cap_a_acute_wen,
-    wait-ms = <13>;
-    tap-ms = <13>;
-    bindings
-        = <&macro_press   &kp LALT>
-        , <&macro_tap     &kp KP_N0 &kp KP_N1 &kp KP_N9 &kp KP_N3>
-        , <&macro_release &kp LALT>
-        ;
-)
+        ZMK_MACRO(m_cap_a_acute_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_press   &kp LALT>
+                , <&macro_tap     &kp KP_PLUS &kp C &kp KP_N1>
+                , <&macro_release &kp LALT>
+                ;
+        )
 
-ZMK_MACRO(m_o_dacute_wen,
-    wait-ms = <13>;
-    tap-ms = <13>;
-    bindings
-        = <&macro_press   &kp LALT>
-        , <&macro_tap     &kp KP_N0 &kp KP_N3 &kp KP_N3 &kp KP_N7>
-        , <&macro_release &kp LALT>
-        ;
-)
+        ZMK_MACRO(m_o_dacute_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_press   &kp LALT>
+                , <&macro_tap     &kp KP_PLUS &kp KP_N1 &kp KP_N5 &kp KP_N1>
+                , <&macro_release &kp LALT>
+                ;
+        )
 
-ZMK_MACRO(m_cap_o_dacute_wen,
-    wait-ms = <13>;
-    tap-ms = <13>;
-    bindings
-        = <&macro_press   &kp LALT>
-        , <&macro_tap     &kp KP_N0 &kp KP_N3 &kp KP_N3 &kp KP_N6>
-        , <&macro_release &kp LALT>
-        ;
-)
+        ZMK_MACRO(m_cap_o_dacute_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_press   &kp LALT>
+                , <&macro_tap     &kp KP_PLUS &kp KP_N1 &kp KP_N5 &kp KP_N0>
+                , <&macro_release &kp LALT>
+                ;
+        )
 
-ZMK_MACRO(m_u_dacute_wen,
-    wait-ms = <13>;
-    tap-ms = <13>;
-    bindings
-        = <&macro_press   &kp LALT>
-        , <&macro_tap     &kp KP_N0 &kp KP_N3 &kp KP_N6 &kp KP_N9>
-        , <&macro_release &kp LALT>
-        ;
-)
+        ZMK_MACRO(m_u_dacute_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_press   &kp LALT>
+                , <&macro_tap     &kp KP_PLUS &kp KP_N1 &kp KP_N7 &kp KP_N1>
+                , <&macro_release &kp LALT>
+                ;
+        )
 
-ZMK_MACRO(m_cap_u_dacute_wen,
-    wait-ms = <13>;
-    tap-ms = <13>;
-    bindings
-        = <&macro_press   &kp LALT>
-        , <&macro_tap     &kp KP_N0 &kp KP_N3 &kp KP_N6 &kp KP_N8>
-        , <&macro_release &kp LALT>
-        , <&macro_tap     &to WEN_BASE>
-        ;
-)
+        ZMK_MACRO(m_cap_u_dacute_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_press   &kp LALT>
+                , <&macro_tap     &kp KP_PLUS &kp KP_N1 &kp KP_N7 &kp KP_N0>
+                , <&macro_release &kp LALT>
+                , <&macro_tap     &to WEN_BASE>
+                ;
+        )
 
-ZMK_MACRO(m_o_diaresis_wen,
-    wait-ms = <13>;
-    tap-ms = <13>;
-    bindings
-        = <&macro_press   &kp LALT>
-        , <&macro_tap     &kp KP_N1 &kp KP_N4 &kp KP_N8>
-        , <&macro_release &kp LALT>
-        , <&macro_tap     &to WEN_BASE>
-        ;
-)
+        ZMK_MACRO(m_o_diaresis_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_press   &kp LALT>
+                , <&macro_tap     &kp KP_PLUS &kp F &kp KP_N6>
+                , <&macro_release &kp LALT>
+                , <&macro_tap     &to WEN_BASE>
+                ;
+        )
 
-ZMK_MACRO(m_cap_o_diaresis_wen,
-    wait-ms = <13>;
-    tap-ms = <13>;
-    bindings
-        = <&macro_press   &kp LALT>
-        , <&macro_tap     &kp KP_N1 &kp KP_N5 &kp KP_N3>
-        , <&macro_release &kp LALT>
-        , <&macro_tap     &to WEN_BASE>
-        ;
-)
+        ZMK_MACRO(m_cap_o_diaresis_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_press   &kp LALT>
+                , <&macro_tap     &kp KP_PLUS &kp D &kp KP_N6>
+                , <&macro_release &kp LALT>
+                , <&macro_tap     &to WEN_BASE>
+                ;
+        )
 
-ZMK_MACRO(m_u_diaresis_wen,
-    wait-ms = <13>;
-    tap-ms = <13>;
-    bindings
-        = <&macro_press   &kp LALT>
-        , <&macro_tap     &kp KP_N1 &kp KP_N2 &kp KP_N9>
-        , <&macro_release &kp LALT>
-        , <&macro_tap     &to WEN_BASE>
-        ;
-)
+        ZMK_MACRO(m_u_diaresis_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_press   &kp LALT>
+                , <&macro_tap     &kp KP_PLUS &kp F &kp C>
+                , <&macro_release &kp LALT>
+                , <&macro_tap     &to WEN_BASE>
+                ;
+        )
 
-ZMK_MACRO(m_cap_u_diaresis_wen,
-    wait-ms = <13>;
-    tap-ms = <13>;
-    bindings
-        = <&macro_press   &kp LALT>
-        , <&macro_tap     &kp KP_N1 &kp KP_N5 &kp KP_N4>
-        , <&macro_release &kp LALT>
-        ;
-)
-*/
-  };
+        ZMK_MACRO(m_cap_u_diaresis_wen,
+            wait-ms = <13>;
+            tap-ms = <13>;
+            bindings
+                = <&macro_press   &kp LALT>
+                , <&macro_tap     &kp KP_PLUS &kp D &kp C>
+                , <&macro_release &kp LALT>
+                ;
+        )
+          };
 };
