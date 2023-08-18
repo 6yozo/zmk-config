@@ -349,10 +349,10 @@ combo_ro_##NAME { \
         wen_base_layer {
 // COLEMAK-DH
             bindings = <
-    &kp SQT   &kp W    &kp F      &kp P    &kp B           &kp J   &kp L    &kp U      &kp Y    &kp Q
-    &kp A     &kp R    &kp S      &kp T    &kp G           &kp M   &kp N    &kp E      &kp I    &kp O
-    &kp FSLH  &kp DOT  &kp C      &kp D    &kp V           &kp K   &kp H    &kp COMMA  &kp X    &kp Z
-    &kp N1    &kp ESC  &kp SPACE  &kp TAB  &kp N2          &kp N3  &kp RET  &kp BSPC   &kp DEL  &kp N4
+    &kp Q   &kp W    &kp F      &kp P    &kp B           &kp J   &kp L    &kp U      &kp Y    &kp SQT
+    &kp A   &kp R    &kp S      &kp T    &kp G           &kp M   &kp N    &kp E      &kp I    &kp O
+    &kp Z   &kp X    &kp C      &kp D    &kp V           &kp K   &kp H    &kp COMMA  &kp DOT  &kp FSLH
+    &kp N1  &kp ESC  &kp SPACE  &kp TAB  &kp N2          &kp N3  &kp RET  &kp BSPC   &kp DEL  &kp N4
             >;
 
             sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
