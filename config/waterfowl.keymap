@@ -341,6 +341,31 @@ combo_ro_##NAME { \
             bindings = <&to MHU_BASE>;
             layers = <WEN_LAYER_SET>;
         };
+        
+        combo_enter_left {
+            timeout-ms = <TIMEOUT_MS>;
+            key-positions = <21 22 23>;
+            bindings = <&kp RET>;
+            layers = <WEN_LAYER_SET>;
+        };
+        combo_enter_right {
+            timeout-ms = <TIMEOUT_MS>;
+            key-positions = <26 27 28>;
+            bindings = <&kp RET>;
+            layers = <WEN_LAYER_SET>;
+        };
+        combo_tab_left {
+            timeout-ms = <TIMEOUT_MS>;
+            key-positions = <11 12 13>;
+            bindings = <&kp TAB>;
+            layers = <WEN_LAYER_SET>;
+        };
+        combo_tab_right {
+            timeout-ms = <TIMEOUT_MS>;
+            key-positions = <16 17 18>;
+            bindings = <&kp TAB>;
+            layers = <WEN_LAYER_SET>;
+        };
     };
 
     keymap {
@@ -349,10 +374,10 @@ combo_ro_##NAME { \
         wen_base_layer {
 // COLEMAK-DH
             bindings = <
-    &kp Q   &kp W    &kp F      &kp P    &kp B           &kp J   &kp L    &kp U      &kp Y    &kp SQT
-    &kp A   &kp R    &kp S      &kp T    &kp G           &kp M   &kp N    &kp E      &kp I    &kp O
-    &kp Z   &kp X    &kp C      &kp D    &kp V           &kp K   &kp H    &kp COMMA  &kp DOT  &kp FSLH
-    &kp N1  &kp ESC  &kp SPACE  &kp TAB  &kp N2          &kp N3  &kp RET  &kp BSPC   &kp DEL  &kp N4
+    &kp Q   &kp W    &kp F      &kp P     &kp B           &kp J   &kp L      &kp U      &kp Y    &kp SQT
+    &kp A   &kp R    &kp S      &kp T     &kp G           &kp M   &kp N      &kp E      &kp I    &kp O
+    &kp Z   &kp X    &kp C      &kp D     &kp V           &kp K   &kp H      &kp COMMA  &kp DOT  &kp FSLH
+    &kp N1  &kp ESC  &kp SPACE  &kp SEMI  &kp N2          &kp N3  &kp MINUS  &kp BSPC   &kp DEL  &kp N4
             >;
 
             sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
