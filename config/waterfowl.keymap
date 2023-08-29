@@ -435,7 +435,7 @@ combo_ro_##NAME { \
         wen_sym_layer {
 // WEN_SYM
             bindings = <
-    &kp SQT    &kp LT       &kp GT     &kp DQT    &kp DOT            &kp AMPS   &m_scope   &kp LBKT  &kp RBKT    &kp PRCNT
+    &kp GRAVE  &kp LT       &kp GT     &kp DQT    &kp DOT            &kp AMPS   &m_scope   &kp LBKT  &kp RBKT    &kp PRCNT
     &kp EXCL   &kp MINUS    &kp PLUS   &kp EQUAL  &kp HASH           &kp PIPE   &kp COLON  &kp LPAR  &kp RPAR    &kp QMARK
     &kp CARET  &kp FSLH     &kp STAR   &kp BSLH   &m_par_dir         &kp TILDE  &kp DLLR   &kp LBRC  &kp RBRC    &kp AT
     &kp N1     &key_repeat  &kp SPACE  &kp SEMI   &kp N2             &kp N3     &kp MINUS  &kp BSPC  &star_excl  &kp N4
