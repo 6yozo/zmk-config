@@ -18,7 +18,7 @@
 #include "macros_whu.h"
 #include "macros_wen.h"
 
-#define TIMEOUT_MS    50
+#define TIMEOUT_MS    40
 
 // Left Side
 #define TIL  3 // Top Index finger Left
@@ -536,10 +536,10 @@ combo_ro_##NAME { \
         wen_num_layer {
 // WEN_NUM, KP_DOT would be better here instad of DOT, but num lock state interferes with KP_DOT.
             bindings = <
-    &kp EQUAL  &kp N9       &kp N8  &kp N7    &kp FSLH           &none   &none      &none     &none       &none
-    &kp DOT    &kp N6       &kp N5  &kp N4    &kp MINUS          &none   &kp COMMA  &none     &none       &none
-    &kp PLUS   &kp N3       &kp N2  &kp N1    &kp STAR           &none   &none      &none     &none       &none
-    &kp N1     &key_repeat  &kp N0  &kp SEMI  &kp N2             &kp N3  &kp MINUS  &kp BSPC  &star_excl  &kp N4
+    &kp EQUAL  &kp N9       &kp N8     &kp N7    &kp FSLH           &none   &none      &none      &none       &none
+    &kp N0     &kp N6       &kp N5     &kp N4    &kp MINUS          &none   &none      &none      &none       &none
+    &kp PLUS   &kp N3       &kp N2     &kp N1    &kp STAR           &none   &none      &kp COMMA  &kp DOT     &none
+    &kp N1     &key_repeat  &kp SPACE  &kp SEMI  &kp N2             &kp N3  &kp MINUS  &kp BSPC   &star_excl  &kp N4
             >;
 
             sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
@@ -644,10 +644,10 @@ combo_ro_##NAME { \
         whu_num_layer {
 // WHU_NUM, KP_DOT would be better here instad of DOT, but num lock state interferes with KP_DOT.
             bindings = <
-    &kp AMPS  &kp N9       &kp N8     &kp N7           &kp CARET            &none   &none             &none     &none           &none
-    &kp DOT   &kp N6       &kp N5     &kp N4           &kp FSLH             &none   &kp COMMA         &none     &none           &none
-    &kp HASH  &kp N3       &kp N2     &kp N1           &m_star_whu          &none   &none             &none     &none           &none
-    &kp N1    &key_repeat  &kp GRAVE  &semi_colon_whu  &kp N2               &kp N3  &minus_under_whu  &kp BSPC  &star_excl_whu  &kp N4
+    &kp AMPS   &kp N9       &kp N8     &kp N7           &kp CARET            &none   &none             &none      &none           &none
+    &kp GRAVE  &kp N6       &kp N5     &kp N4           &kp FSLH             &none   &none             &none      &none           &none
+    &kp HASH   &kp N3       &kp N2     &kp N1           &m_star_whu          &none   &none             &kp COMMA  &kp DOT         &none
+    &kp N1     &key_repeat  &kp SPACE  &semi_colon_whu  &kp N2               &kp N3  &minus_under_whu  &kp BSPC   &star_excl_whu  &kp N4
             >;
 
             sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
