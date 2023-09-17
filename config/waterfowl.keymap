@@ -18,7 +18,7 @@
 #include "macros_whu.h"
 #include "macros_wen.h"
 
-#define TIMEOUT_MS    40
+#define TIMEOUT_MS    35
 
 // Left Side
 #define TIL  3 // Top Index finger Left
