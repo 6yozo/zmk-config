@@ -18,7 +18,7 @@
 #include "macros_whu.h"
 #include "macros_wen.h"
 
-#define TIMEOUT_MS    35
+#define TIMEOUT_MS    29
 
 // Left Side
 #define TIL  3 // Top Index finger Left
@@ -465,7 +465,7 @@ combo_ro_##NAME##HOST_LAYOUT { \
         system_layer {
 // SYSTEM
             bindings = <
-    &none       &none        &none         &to WHU_TAIPO  &none           &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI
+    &none       &none        &none         &none          &none           &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI
     &bt BT_CLR  &none        &to MHU_BASE  &to WHU_BASE   &none           &kp EP_TOG       &kp C_PREV       &kp C_VOL_DN     &kp C_VOL_UP     &kp C_NEXT
     &none       &none        &none         &to WEN_BASE   &none           &out OUT_TOG     &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3
     &kp N1      &key_repeat  &kp SPACE     &kp SEMI       &kp N2          &kp N3           &kp MINUS        &kp BSPC         &star_excl       &kp N4
@@ -489,10 +489,10 @@ combo_ro_##NAME##HOST_LAYOUT { \
         wen_nav_layer {
 // WEN_NAV
             bindings = <
-    &to SYSTEM  &none        &kp K_APP    &none         &kp KP_NUMLOCK          &kp INS       &none      &none      &none       &none
-    &kp LGUI    &kp LALT     &kp LCTRL    &kp LSHFT     &caps_word              &kp CAPS      &kp LEFT   &kp DOWN   &kp UP      &kp RIGHT
-    &m_undo     &m_cut_wen   &m_copy_wen  &m_paste_wen  &m_again_wen            &kp LC(BSPC)  &kp HOME   &kp PG_DN  &kp PG_UP   &kp END
-    &kp N1      &key_repeat  &kp SPACE    &kp SEMI      &kp N2                  &kp N3        &kp MINUS  &kp BSPC   &star_excl  &kp N4
+    &to SYSTEM  &to WEN_TAIPO  &kp K_APP    &none         &kp KP_NUMLOCK          &kp INS       &none      &none      &none       &none
+    &kp LGUI    &kp LALT       &kp LCTRL    &kp LSHFT     &caps_word              &kp CAPS      &kp LEFT   &kp DOWN   &kp UP      &kp RIGHT
+    &m_undo     &m_cut_wen     &m_copy_wen  &m_paste_wen  &m_again_wen            &kp LC(BSPC)  &kp HOME   &kp PG_DN  &kp PG_UP   &kp END
+    &kp N1      &key_repeat    &kp SPACE    &kp SEMI      &kp N2                  &kp N3        &kp MINUS  &kp BSPC   &star_excl  &kp N4
             >;
 
             sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
@@ -585,10 +585,10 @@ combo_ro_##NAME##HOST_LAYOUT { \
         whu_nav_layer {
 // WHU_NAV
             bindings = <
-    &to SYSTEM  &none        &kp K_APP    &none            &kp KP_NUMLOCK          &kp INS       &none             &none      &none           &none
-    &kp LGUI    &kp LALT     &kp LCTRL    &kp LSHFT        &caps_word              &kp CAPS      &kp LEFT          &kp DOWN   &kp UP          &kp RIGHT
-    &m_undo     &m_cut_whu   &m_copy_whu  &m_paste_whu     &m_again_whu            &kp LC(BSPC)  &kp HOME          &kp PG_DN  &kp PG_UP       &kp END
-    &kp N1      &key_repeat  &kp SPACE    &semi_colon_whu  &kp N2                  &kp N3        &minus_under_whu  &kp BSPC   &star_excl_whu  &kp N4
+    &to SYSTEM  &to WHU_TAIPO  &kp K_APP    &none            &kp KP_NUMLOCK          &kp INS       &none             &none      &none           &none
+    &kp LGUI    &kp LALT       &kp LCTRL    &kp LSHFT        &caps_word              &kp CAPS      &kp LEFT          &kp DOWN   &kp UP          &kp RIGHT
+    &m_undo     &m_cut_whu     &m_copy_whu  &m_paste_whu     &m_again_whu            &kp LC(BSPC)  &kp HOME          &kp PG_DN  &kp PG_UP       &kp END
+    &kp N1      &key_repeat    &kp SPACE    &semi_colon_whu  &kp N2                  &kp N3        &minus_under_whu  &kp BSPC   &star_excl_whu  &kp N4
             >;
 
             sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
