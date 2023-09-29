@@ -471,7 +471,7 @@ combo_ro_##NAME##HOST_LAYOUT { \
     &kp N1      &key_repeat  &kp SPACE     &kp SEMI       &kp N2          &kp N3           &kp MINUS        &kp BSPC         &star_excl       &kp N4
             >;
 
-            sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
+            sensor-bindings = <&inc_dec_kp C_BRI_UP C_BRI_DN &inc_dec_kp C_VOL_DN C_VOL_UP >;
         };
 
         wen_base_layer {
@@ -483,7 +483,7 @@ combo_ro_##NAME##HOST_LAYOUT { \
     &kp N1  &key_repeat  &kp SPACE  &kp SEMI  &kp N2          &kp N3  &kp MINUS  &kp BSPC     &star_excl  &kp N4
             >;
 
-            sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
+            sensor-bindings = <&inc_dec_kp C_BRI_UP C_BRI_DN &inc_dec_kp C_VOL_DN C_VOL_UP >;
         };
 
         wen_nav_layer {
@@ -495,7 +495,7 @@ combo_ro_##NAME##HOST_LAYOUT { \
     &kp N1      &key_repeat    &kp SPACE    &kp SEMI      &kp N2                  &kp N3        &kp MINUS  &kp BSPC   &star_excl  &kp N4
             >;
 
-            sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
+            sensor-bindings = <&inc_dec_kp C_BRI_UP C_BRI_DN &inc_dec_kp C_VOL_DN C_VOL_UP >;
         };
 
         wen_num_layer {
@@ -507,7 +507,7 @@ combo_ro_##NAME##HOST_LAYOUT { \
     &kp N1    &key_repeat  &kp SPACE        &kp SEMI  &kp N2            &kp N3     &kp MINUS  &kp BSPC   &star_excl  &kp N4
             >;
 
-            sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
+            sensor-bindings = <&inc_dec_kp C_BRI_UP C_BRI_DN &inc_dec_kp C_VOL_DN C_VOL_UP >;
         };
         
         wen_sym_layer {
@@ -519,7 +519,7 @@ combo_ro_##NAME##HOST_LAYOUT { \
     &kp N1     &key_repeat  &kp SPACE  &kp SEMI   &kp N2             &kp N3     &kp MINUS  &kp BSPC  &star_excl  &kp N4
             >;
 
-            sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
+            sensor-bindings = <&inc_dec_kp C_BRI_UP C_BRI_DN &inc_dec_kp C_VOL_DN C_VOL_UP >;
         };
 
         wen_acute_layer {
@@ -531,7 +531,7 @@ combo_ro_##NAME##HOST_LAYOUT { \
     &to WEN_BASE     &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &to WEN_BASE     &to WEN_BASE     &to WEN_BASE
           >;
 
-            sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
+            sensor-bindings = <&inc_dec_kp C_BRI_UP C_BRI_DN &inc_dec_kp C_VOL_DN C_VOL_UP >;
         };
 
         wen_dacute_layer {
@@ -543,7 +543,7 @@ combo_ro_##NAME##HOST_LAYOUT { \
     &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &to WEN_BASE      &to WEN_BASE  &to WEN_BASE
           >;
 
-            sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
+            sensor-bindings = <&inc_dec_kp C_BRI_UP C_BRI_DN &inc_dec_kp C_VOL_DN C_VOL_UP >;
         };
 
         wen_diaresis_layer {
@@ -555,7 +555,7 @@ combo_ro_##NAME##HOST_LAYOUT { \
     &to WEN_BASE    &to WEN_BASE  &to WEN_BASE  &to WEN_BASE  &to WEN_BASE           &to WEN_BASE  &to WEN_BASE  &to WEN_BASE        &to WEN_BASE  &to WEN_BASE
           >;
 
-            sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
+            sensor-bindings = <&inc_dec_kp C_BRI_UP C_BRI_DN &inc_dec_kp C_VOL_DN C_VOL_UP >;
         };
 
         wen_taipo_layer {
@@ -567,7 +567,7 @@ combo_ro_##NAME##HOST_LAYOUT { \
     &none    &none  &none  &none  &none           &none  &none  &none  &none  &none
           >;
 
-            sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
+            sensor-bindings = <&inc_dec_kp C_BRI_UP C_BRI_DN &inc_dec_kp C_VOL_DN C_VOL_UP >;
         };
 
         whu_base_layer {
@@ -579,7 +579,7 @@ combo_ro_##NAME##HOST_LAYOUT { \
     &kp N1  &key_repeat  &kp SPACE  &semi_colon_whu  &kp N2          &kp N3  &kp FSLH  &kp BSPC         &star_excl_whu  &kp N4
             >;
 
-            sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
+            sensor-bindings = <&inc_dec_kp C_BRI_UP C_BRI_DN &inc_dec_kp C_VOL_DN C_VOL_UP >;
         };
 
         whu_nav_layer {
@@ -591,7 +591,7 @@ combo_ro_##NAME##HOST_LAYOUT { \
     &kp N1      &key_repeat    &kp SPACE    &semi_colon_whu  &kp N2                  &kp N3        &minus_under_whu  &kp BSPC   &star_excl_whu  &kp N4
             >;
 
-            sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
+            sensor-bindings = <&inc_dec_kp C_BRI_UP C_BRI_DN &inc_dec_kp C_VOL_DN C_VOL_UP >;
         };
 
         whu_num_layer {
@@ -603,7 +603,7 @@ combo_ro_##NAME##HOST_LAYOUT { \
     &kp N1     &key_repeat  &kp SPACE        &semi_colon_whu  &kp N2               &kp N3     &minus_under_whu  &kp BSPC   &star_excl_whu  &kp N4
             >;
 
-            sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
+            sensor-bindings = <&inc_dec_kp C_BRI_UP C_BRI_DN &inc_dec_kp C_VOL_DN C_VOL_UP >;
         };
         
         whu_sym_layer {
@@ -615,7 +615,7 @@ combo_ro_##NAME##HOST_LAYOUT { \
     &kp N1                &key_repeat  &kp SPACE  &semi_colon_whu  &kp N2                  &kp N3        &minus_under_whu  &kp BSPC     &star_excl_whu  &kp N4
             >;
 
-            sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
+            sensor-bindings = <&inc_dec_kp C_BRI_UP C_BRI_DN &inc_dec_kp C_VOL_DN C_VOL_UP >;
         };
 
         whu_acute_layer {
@@ -627,7 +627,7 @@ combo_ro_##NAME##HOST_LAYOUT { \
     &to WHU_BASE       &to WHU_BASE  &to WHU_BASE  &to WHU_BASE  &to WHU_BASE           &to WHU_BASE  &to WHU_BASE  &to WHU_BASE       &to WHU_BASE       &to WHU_BASE
           >;
 
-            sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
+            sensor-bindings = <&inc_dec_kp C_BRI_UP C_BRI_DN &inc_dec_kp C_VOL_DN C_VOL_UP >;
         };
 
         whu_dacute_layer {
@@ -639,7 +639,7 @@ combo_ro_##NAME##HOST_LAYOUT { \
     &to WHU_BASE  &to WHU_BASE  &to WHU_BASE  &to WHU_BASE  &to WHU_BASE           &to WHU_BASE  &to WHU_BASE  &to WHU_BASE        &to WHU_BASE  &to WHU_BASE
           >;
 
-            sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
+            sensor-bindings = <&inc_dec_kp C_BRI_UP C_BRI_DN &inc_dec_kp C_VOL_DN C_VOL_UP >;
         };
 
         whu_diaresis_layer {
@@ -651,7 +651,7 @@ combo_ro_##NAME##HOST_LAYOUT { \
     &to WHU_BASE    &to WHU_BASE  &to WHU_BASE  &to WHU_BASE  &to WHU_BASE           &to WHU_BASE  &to WHU_BASE  &to WHU_BASE          &to WHU_BASE  &to WHU_BASE
           >;
 
-            sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
+            sensor-bindings = <&inc_dec_kp C_BRI_UP C_BRI_DN &inc_dec_kp C_VOL_DN C_VOL_UP >;
         };
 
         whu_taipo_layer {
@@ -663,7 +663,7 @@ combo_ro_##NAME##HOST_LAYOUT { \
     &none    &none  &none  &none  &none           &none  &none  &none  &none  &none
           >;
 
-            sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
+            sensor-bindings = <&inc_dec_kp C_BRI_UP C_BRI_DN &inc_dec_kp C_VOL_DN C_VOL_UP >;
         };
 
     };
