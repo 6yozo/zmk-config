@@ -21,7 +21,7 @@
 #include <dt-bindings/zmk/ext_power.h>
 
 #include "layers.h"
-#include "acute_macros.h"
+#include "accent_macros.h"
 
 / {
     macros {
@@ -271,24 +271,6 @@
             tap-ms = <13>;
             bindings
                 = <&macro_tap     &m_cap_u_diaresis_wen>
-                , <&macro_tap     &to WEN_BASE>
-                ;
-        )
-
-        ZMK_MACRO(m_excl_wen,
-            wait-ms = <25>;
-            tap-ms = <25>;
-            bindings
-                = <&macro_tap     &kp EXCL>
-                , <&macro_tap     &to WEN_BASE>
-                ;
-        )
-
-        ZMK_MACRO(m_semi_wen,
-            wait-ms = <25>;
-            tap-ms = <25>;
-            bindings
-                = <&macro_tap     &kp SEMI>
                 , <&macro_tap     &to WEN_BASE>
                 ;
         )

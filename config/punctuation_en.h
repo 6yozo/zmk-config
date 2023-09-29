@@ -20,8 +20,6 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/ext_power.h>
 
-#include "macros.h"
-
 / {
     behaviors {
       comma_lpar: comma_lpar_with_shift {

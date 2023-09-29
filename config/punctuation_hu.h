@@ -20,79 +20,78 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/ext_power.h>
 
-#include "macros.h"
+#include "macros_whu.h"
 
 / {
     behaviors {
-      o_acute_to_wen: o_acute_wen_with_shift {
+      comma_lpar_whu: comma_lpar_with_shift {
         compatible = "zmk,behavior-mod-morph";
-        label = "O_ACUTE_WITH_SHIFT";
+        label = "COMMA_LPAR_WITH_SHIFT";
         #binding-cells = <0>;
-        bindings = <&m_o_acute_to_wen>, <&m_cap_o_acute_to_wen>;
+        bindings = <&kp COMMA>, <&m_lpar_whu>;
         mods = <(MOD_RSFT|MOD_LSFT)>;
+        keep-mods = <(MOD_LSFT)>;
       };
 
-      e_acute_to_wen: e_acute_wen_with_shift {
+      dot_rpar_whu: dot_rpar_with_shift {
         compatible = "zmk,behavior-mod-morph";
-        label = "E_ACUTE_WITH_SHIFT";
+        label = "DOT_RPAR_WITH_SHIFT";
         #binding-cells = <0>;
-        bindings = <&m_e_acute_to_wen>, <&m_cap_e_acute_to_wen>;
+        bindings = <&kp DOT>, <&m_rpar_whu>;
         mods = <(MOD_RSFT|MOD_LSFT)>;
+        keep-mods = <(MOD_LSFT)>;
       };
 
-      a_acute_to_wen: a_acute_wen_with_shift {
+      star_excl_whu: star_excl_with_shift {
         compatible = "zmk,behavior-mod-morph";
-        label = "A_ACUTE_WITH_SHIFT";
+        label = "STAR_EXCL_WITH_SHIFT";
         #binding-cells = <0>;
-        bindings = <&m_a_acute_to_wen>, <&m_cap_a_acute_to_wen>;
+        bindings = <&m_star_whu>, <&m_excl_whu>;
         mods = <(MOD_RSFT|MOD_LSFT)>;
+        keep-mods = <(MOD_LSFT)>;
       };
 
-      u_acute_to_wen: u_acute_wen_with_shift {
+      semi_colon_whu: semi_colon_with_shift {
         compatible = "zmk,behavior-mod-morph";
-        label = "U_ACUTE_WITH_SHIFT";
+        label = "SEMI_COLON_WITH_SHIFT";
         #binding-cells = <0>;
-        bindings = <&m_u_acute_to_wen>, <&m_cap_u_acute_to_wen>;
+        bindings = <&m_semi_whu>, <&m_colon_whu>;
         mods = <(MOD_RSFT|MOD_LSFT)>;
+        keep-mods = <(MOD_LSFT)>;
       };
 
-      i_acute_to_wen: i_acute_wen_with_shift {
+      minus_under_whu: minus_under_with_shift {
         compatible = "zmk,behavior-mod-morph";
-        label = "I_ACUTE_WITH_SHIFT";
+        label = "MINUS_UNDER_WITH_SHIFT";
         #binding-cells = <0>;
-        bindings = <&m_i_acute_to_wen>, <&m_cap_i_acute_to_wen>;
+        bindings = <&m_minus_whu>, <&m_under_whu>;
         mods = <(MOD_RSFT|MOD_LSFT)>;
+        keep-mods = <(MOD_LSFT)>;
       };
 
-      o_dacute_to_wen: o_dacute_wen_with_shift {
+      fslh_qmark_whu: fslh_qmark_with_shift {
         compatible = "zmk,behavior-mod-morph";
-        label = "O_DACUTE_WITH_SHIFT";
+        label = "FSLH_QMARK_WITH_SHIFT";
         #binding-cells = <0>;
-        bindings = <&m_o_dacute_to_wen>, <&m_cap_o_dacute_to_wen>;
+        bindings = <&m_fslh_whu>, <&m_qmark_whu>;
         mods = <(MOD_RSFT|MOD_LSFT)>;
+        keep-mods = <(MOD_LSFT)>;
       };
 
-      u_dacute_to_wen: u_dacute_wen_with_shift {
+      sqt_dqt_whu: sqt_dqt_with_shift {
         compatible = "zmk,behavior-mod-morph";
-        label = "U_DACUTE_WITH_SHIFT";
+        label = "SQT_DQT_WITH_SHIFT";
         #binding-cells = <0>;
-        bindings = <&m_u_dacute_to_wen>, <&m_cap_u_dacute_to_wen>;
+        bindings = <&m_sqt_whu>, <&m_dqt_whu>;
         mods = <(MOD_RSFT|MOD_LSFT)>;
+        keep-mods = <(MOD_LSFT)>;
       };
 
-      o_diaresis_to_wen: o_diaresis_wen_with_shift {
+      carethulc_caret_whu: carethulc_caret_with_shift {
         compatible = "zmk,behavior-mod-morph";
-        label = "O_DIARESIS_WITH_SHIFT";
+        label = "CARETHULC_CARET_WITH_SHIFT";
         #binding-cells = <0>;
-        bindings = <&m_o_diaresis_to_wen>, <&m_cap_o_diaresis_to_wen>;
-        mods = <(MOD_RSFT|MOD_LSFT)>;
-      };
-
-      u_diaresis_to_wen: u_diaresis_wen_with_shift {
-        compatible = "zmk,behavior-mod-morph";
-        label = "U_DIARESIS_WITH_SHIFT";
-        #binding-cells = <0>;
-        bindings = <&m_u_diaresis_to_wen>, <&m_cap_u_diaresis_to_wen>;
+        bindings = <&m_carethulc_whu>, <&m_caret_whu>;
         mods = <(MOD_RSFT|MOD_LSFT)>;
       };
 
