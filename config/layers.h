@@ -47,4 +47,18 @@
 
 #define WHU_LAYER_SET WHU_BASE WHU_NAV WHU_NUM WHU_SYM WHU_AL WHU_DAL WHU_DL
 
-#define MHU_BASE  0
+// LAYERS FOR MAC-HUNGARIAN-QUERTZ HOST (MHU)
+
+#define MHU_BASE  17
+#define MHU_NAV   18
+#define MHU_NUM   19
+#define MHU_SYM   20
+// Acute
+#define MHU_AL    21
+// Double acute
+#define MHU_DAL   22
+// Diaresis
+#define MHU_DL    23
+#define MHU_TAIPO 24
+
+#define MHU_LAYER_SET MHU_BASE MHU_NAV MHU_NUM MHU_SYM MHU_AL MHU_DAL MHU_DL
